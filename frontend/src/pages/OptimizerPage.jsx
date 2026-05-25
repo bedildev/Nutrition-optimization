@@ -1,0 +1,221 @@
+import React, { useState } from 'react';
+import MenuCard from '../components/MenuCard';
+import { useLocal } from '../context/LocalContext';
+import useInput from '../hooks/useInput';
+
+const goals = ['Turun Berat Badan', 'Naikkan Massa Otot', 'Jaga Kesehatan', 'Fokus Energi Harian'];
+const activities = ['Sedentary', 'Ringan', 'Sedang', 'Aktif', 'Sangat Aktif'];
+const activityFactors = {
+  Sedentary: 1.2,
+  Ringan: 1.375,
+  Sedang: 1.55,
+  Aktif: 1.725,
+  'Sangat Aktif': 1.9,
+};
+
+function OptimizerPage() {
+  const { lunchMenus, profile, optimizerResult, saveOptimizerResult, updateProfile } = useLocal();
+  const [age, onAgeChange] = useInput(String(profile.age));
+  const [weight, onWeightChange] = useInput(String(profile.weight));
+  const [height, onHeightChange] = useInput(String(profile.height));
+  const [goal, setGoal] = useState(profile.goal);
+  const [activity, setActivity] = useState(profile.activity);
+  const [step, setStep] = useState(optimizerResult ? 3 : 1);
+  const [result, setResult] = useState(optimizerResult);
+
+  function calculateRecommendation() {
+    const ageValue = Number(age);
+    const weightValue = Number(weight);
+    const heightValue = Number(height);
+
+    if (!ageValue || !weightValue || !heightValue) {
+      return null;
+    }
+
+    const bmr = Math.round(10 * weightValue + (6.25 * heightValue) - (5 * ageValue) + 5);
+    const tdee = Math.round(bmr * activityFactors[activity]);
+    const target = goal.includes('Turun')
+      ? tdee - 300
+      : goal.includes('Naikkan')
+        ? tdee + 300
+        : tdee;
+
+    const sortedMenus = [...lunchMenus].sort((left, right) => right.score - left.score);
+    const recommended = goal.includes('Turun')
+      ? sortedMenus.filter((menu) => menu.cal <= 420).slice(0, 3)
+      : goal.includes('Naikkan')
+        ? sortedMenus.filter((menu) => menu.protein >= 35).slice(0, 3)
+        : sortedMenus.slice(0, 3);
+
+    return {
+      bmr,
+      tdee,
+      target,
+      protein: Math.round(weightValue * (goal.includes('Naikkan') ? 2 : 1.6)),
+      carbs: Math.round((target * 0.45) / 4),
+      fat: Math.round((target * 0.25) / 9),
+      recommended,
+    };
+  }
+
+  async function handleGenerate() {
+    setStep(2);
+    await new Promise((resolve) => setTimeout(resolve, 1300));
+
+    const nextResult = calculateRecommendation();
+
+    if (!nextResult) {
+      setStep(1);
+      return;
+    }
+
+    setResult(nextResult);
+    setStep(3);
+    saveOptimizerResult(nextResult);
+    updateProfile({
+      goal,
+      activity,
+      age: Number(age),
+      weight: Number(weight),
+      height: Number(height),
+    });
+  }
+
+  return (
+    <div className="page page--optimizer">
+      <section className="content-section">
+        <div className="section-heading">
+          <span className="eyebrow">AI-powered plan</span>
+          <h1>AI Optimizer</h1>
+          <p>Proses optimasi dirancang dengan alur yang ringan dan intuitif agar pengguna dapat menerima rekomendasi dengan cepat dan jelas.</p>
+        </div>
+
+        {step === 1 ? (
+          <div className="optimizer-panel">
+            <div className="optimizer-grid">
+              {[
+                { id: 'age', label: 'Usia (tahun)', value: age, onChange: onAgeChange },
+                { id: 'weight', label: 'Berat badan (kg)', value: weight, onChange: onWeightChange },
+                { id: 'height', label: 'Tinggi badan (cm)', value: height, onChange: onHeightChange },
+              ].map((field) => (
+                <label className="field" htmlFor={field.id} key={field.id}>
+                  <span>{field.label}</span>
+                  <input
+                    id={field.id}
+                    type="number"
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+                </label>
+              ))}
+            </div>
+
+            <div className="optimizer-choice-grid">
+              <div className="choice-panel">
+                <h2>Tujuan kesehatan</h2>
+                <div className="choice-list">
+                  {goals.map((item) => (
+                    <button
+                      key={item}
+                      className={`choice-button ${goal === item ? 'choice-button--active' : ''}`}
+                      type="button"
+                      onClick={() => setGoal(item)}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="choice-panel">
+                <h2>Tingkat aktivitas</h2>
+                <div className="choice-list">
+                  {activities.map((item) => (
+                    <button
+                      key={item}
+                      className={`choice-button choice-button--violet ${activity === item ? 'choice-button--active' : ''}`}
+                      type="button"
+                      onClick={() => setActivity(item)}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <button className="button button--violet button--full" type="button" onClick={handleGenerate}>
+              Generate menu optimal
+            </button>
+          </div>
+        ) : null}
+
+        {step === 2 ? (
+          <div className="loading-panel">
+            <div className="loading-panel__gear">AI</div>
+            <h2>AI sedang menganalisis kebutuhan Anda</h2>
+            <p>Menghitung target kalori dan mencocokkan menu makan siang paling relevan.</p>
+            <div className="loading-panel__dots">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+        ) : null}
+
+        {step === 3 && result ? (
+          <div className="result-stack">
+            <section className="result-summary">
+              <div className="section-heading section-heading--split">
+                <div>
+                  <span className="eyebrow">Nutrition plan</span>
+                  <h2>Ringkasan target Anda</h2>
+                </div>
+                <button className="button button--secondary" type="button" onClick={() => setStep(1)}>
+                  Ubah input
+                </button>
+              </div>
+
+              <div className="result-metrics">
+                {[
+                  { label: 'Target kalori', value: result.target, suffix: 'kkal', accent: 'orange' },
+                  { label: 'Protein', value: result.protein, suffix: 'g', accent: 'green' },
+                  { label: 'Karbohidrat', value: result.carbs, suffix: 'g', accent: 'yellow' },
+                  { label: 'Lemak sehat', value: result.fat, suffix: 'g', accent: 'violet' },
+                ].map((metric) => (
+                  <article className={`result-metric result-metric--${metric.accent}`} key={metric.label}>
+                    <strong>{metric.value}</strong>
+                    <span>{metric.suffix}</span>
+                    <p>{metric.label}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="result-meta">
+                <span>BMR {result.bmr} kkal</span>
+                <span>TDEE {result.tdee} kkal</span>
+                <span>{goal}</span>
+              </div>
+            </section>
+
+            <section className="content-section content-section--compact">
+              <div className="section-heading section-heading--split">
+                <div>
+                  <span className="eyebrow">Recommended menus</span>
+                  <h2>Rekomendasi dari optimizer</h2>
+                </div>
+              </div>
+              <div className="card-grid">
+                {result.recommended.map((menu) => (
+                  <MenuCard key={menu.id} menu={menu} />
+                ))}
+              </div>
+            </section>
+          </div>
+        ) : null}
+      </section>
+    </div>
+  );
+}
+
+export default OptimizerPage;

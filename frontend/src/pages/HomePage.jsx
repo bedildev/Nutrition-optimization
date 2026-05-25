@@ -1,57 +1,72 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import heroImage from '../assets/home-hero.png';
+import { useLocal } from '../context/LocalContext';
 
-const benefits = [
-  ['recommendation', 'Rekomendasi AI', 'AI menganalisis kebutuhan gizi dan preferensi untuk memberikan menu terbaik.'],
-  ['chart', 'OPTIMASI Gizi', 'Menampilkan kandungan gizi lengkap dari setiap menu yang direkomendasikan.'],
-  ['calendar', 'Mentoring Harian', 'Pantau asupan gizi harian anak secara berkala.'],
+const featureItems = [
+  {
+    title: 'Optimizer berbasis AI',
+    copy: 'Hitung target kalori, protein, karbohidrat, dan lemak dalam satu alur yang ringan.',
+  },
+  {
+    title: 'Katalog makan siang',
+    copy: 'Koleksi menu makan siang bernutrisi dengan skor kualitas, macro, dan label manfaat.',
+  },
+  {
+    title: 'Tampilan yang interaktif',
+    copy: 'Seluruh pengalaman dirancang agar tetap cepat, responsif, dan nyaman digunakan di berbagai alur penggunaan.',
+  },
 ];
 
 function HomePage() {
+  const { authUser } = useLocal();
+  const greetingHour = new Date().getHours();
+  const greeting = greetingHour < 12 ? 'Selamat pagi' : greetingHour < 17 ? 'Selamat siang' : 'Selamat malam';
+
   return (
-    <>
-      <section className="hero">
-        <div className="hero__content">
-          <h1>OPTIMASI MENU MAKANAN ANAK DENGAN AI</h1>
+    <div className="page page--home">
+      <section className="hero-section">
+        <div className="hero-section__content">
+          <span className="eyebrow">{authUser ? `${greeting}, ${authUser.name}` : 'Smart Nutrition Experience'}</span>
+          <h1>
+            Optimasi Menu Makanan Anak
+            <span> dengan NutriAI</span>
+          </h1>
           <p>
-            Sistem cerdas untuk membantu sekolah merencanakan menu makanan bergizi seimbang serta memberikan 
-            rekomendasi aksi terbaik untuk anak sekolah.
+            NutriAI membantu pengguna menemukan menu makan siang yang lebih terarah,
+            mengoptimalkan target gizi, dan mengelola profil personal lewat frontend yang responsif.
           </p>
-          <div className="hero__actions">
-            <Link className="button button--primary" to="/register">Mulai Sekarang</Link>
-            <Link className="button button--secondary" to="/">Pelajari Lebih Lanjut</Link>
+          <div className="hero-section__actions">
+            <Link className="button button--primary" to={authUser ? '/ai-optimizer' : '/register'}>
+              {authUser ? 'Buka AI Optimizer' : 'Buat Akun'}
+            </Link>
+            <Link className="button button--secondary" to={authUser ? '/menu' : '/login'}>
+              {authUser ? 'Jelajahi Menu' : 'Masuk ke Demo'}
+            </Link>
           </div>
         </div>
 
-        <div className="nutrition-visual" aria-label="Preview rekomendasi menu">
-          <span className="mascot mascot--large" />
+        <div className="hero-illustration">
+          <img src={heroImage} alt="Ilustrasi NutriAI" />
         </div>
       </section>
 
-      <section className="section" id="fitur">
-        <div className="section__header">
-          <h2>FITUR UTAMA</h2>
+      <section className="content-section">
+        <div className="section-heading">
+          <span className="eyebrow">Core experience</span>
+          <h2>Dirancang dengan sederhana dan nyaman digunakan</h2>
         </div>
         <div className="feature-grid">
-          {benefits.map(([icon, title, description]) => (
-            <article className="feature-card" key={title}>
-              <span className={`feature-card__icon feature-card__icon--${icon}`} />
-              <h3>{title}</h3>
-              <p>{description}</p>
+          {featureItems.map((feature) => (
+            <article className="feature-panel" key={feature.title}>
+              <span className="feature-panel__icon" />
+              <h3>{feature.title}</h3>
+              <p>{feature.copy}</p>
             </article>
           ))}
         </div>
-
-        <div className="home-cta" id="manfaat">
-          <span className="home-cta__badge">Food Safety</span>
-          <div>
-            <h3>Mulai Jaga Gizi Anak Sekarang</h3>
-            <p>Langkah kecil hari ini untuk masa depan yang lebih sehat.</p>
-          </div>
-          <Link className="button button--primary" to="/register">Daftar Sekarang {'->'}</Link>
-        </div>
       </section>
-    </>
+    </div>
   );
 }
 
