@@ -1,0 +1,1001 @@
+nama_makanan,kategori,kalori,protein,lemak,karbo,harga
+Tahu Curah,Protein,383,18.3,7.1,38.3,41337
+Pepaya Merah,Buah,92,2.0,1.3,22.9,52038
+Teh Organik,Lainnya,20,6.7,2.2,28.0,32525
+Melon Manis,Buah,85,1.8,1.2,20.9,42135
+Mentimun Merah,Lainnya,33,2.2,0.9,7.6,8758
+Beras Putih,Karbohidrat,378,9.0,1.4,76.3,21766
+Ikan Tongkol Tinggi Protein,Protein,241,17.2,12.7,1.1,53519
+Sawi Import,Lainnya,56,4.8,0.9,5.1,37473
+Wortel Super,Sayur,41,3.8,1.0,4.3,31066
+Brokoli Putih,Sayur,15,2.7,0.0,7.2,21517
+Ikan Tongkol Curah,Protein,167,25.3,2.4,1.2,98570
+Jus Hitam,Lainnya,107,0.5,2.6,24.5,25552
+Almond Lokal,Lainnya,579,25.9,41.4,33.0,83529
+Ikan Tuna Tinggi Protein,Protein,215,21.8,5.8,1.7,34968
+Kacang Hijau Tinggi Protein,Lainnya,437,26.2,29.9,47.6,57656
+Daging Kerbau Beku,Protein,287,22.1,9.8,2.4,111526
+Daging Kerbau Pilihan,Protein,278,23.0,11.0,3.5,81959
+Almond Curah,Lainnya,511,15.4,14.7,13.3,83459
+Jeruk Curah,Lainnya,67,0.8,1.9,25.8,26229
+Ikan Bandeng Beku,Protein,152,22.0,7.7,1.0,103252
+Kangkung Lokal,Sayur,32,1.1,0.6,9.3,5771
+Tomat Hitam,Lainnya,58,2.5,0.0,5.9,36249
+Kacang Tanah Beku,Lainnya,304,28.1,11.6,38.9,61778
+Melon Manis,Buah,68,0.8,1.5,16.7,57320
+Daging Sapi Import,Protein,260,26.2,20.6,1.0,125953
+Daging Kerbau Kemasan,Protein,296,26.4,16.4,2.1,92427
+Nugget Hitam,Lainnya,139,19.0,11.2,55.9,65302
+Kangkung Tinggi Protein,Sayur,22,4.2,0.5,7.3,13831
+Susu Asin,Lainnya,127,7.2,4.8,13.6,25139
+Jus Organik,Lainnya,74,7.6,3.6,29.6,11316
+Daging Kerbau Manis,Protein,188,29.4,22.4,4.4,89877
+Beras Pedas,Karbohidrat,357,7.4,2.9,78.9,15857
+Kacang Hijau Pilihan,Lainnya,557,26.9,13.0,21.9,71298
+Biskuit Pedas,Lainnya,386,18.0,27.4,46.2,71646
+Melon Import,Buah,61,0.3,1.5,14.9,38297
+Nasi Beku,Karbohidrat,342,7.7,1.5,75.8,12766
+Tempe Super,Protein,152,14.9,6.9,36.2,53135
+Mete Putih,Lainnya,446,20.4,21.2,36.4,41153
+Ikan Lele Kemasan,Protein,129,22.5,9.9,0.6,43822
+Pepaya Lokal,Buah,59,0.3,0.2,25.9,20732
+Semangka Tinggi Protein,Lainnya,106,2.2,1.3,17.4,52313
+Mangga Import,Lainnya,42,2.2,0.4,24.1,25470
+Beras Hijau,Karbohidrat,343,8.9,2.4,76.2,12815
+Jus Curah,Lainnya,54,3.3,4.4,14.5,6467
+Nasi Manis,Karbohidrat,375,8.1,1.6,80.4,18287
+Daging Sapi Import,Protein,175,21.0,13.4,2.7,172225
+Jus Merah,Lainnya,140,2.0,0.0,3.8,20767
+Biskuit Premium,Lainnya,201,19.9,15.7,32.8,25223
+Jeruk Hijau,Lainnya,94,1.5,1.5,13.8,17587
+Kubis Import,Lainnya,56,3.4,0.1,5.2,5004
+Daging Ayam Premium,Protein,155,18.5,14.6,1.5,63996
+Ketan Rendah Lemak,Lainnya,376,7.0,2.5,76.9,19710
+Teh Pedas,Lainnya,43,7.6,4.9,19.8,15389
+Tempe Hitam,Protein,184,9.6,27.5,48.3,21880
+Almond Lokal,Lainnya,440,19.5,41.3,41.5,89408
+Daging Kerbau Kemasan,Protein,146,18.6,14.0,1.3,160860
+Mangga Premium,Lainnya,94,2.4,0.5,15.2,33668
+Kacang Hijau Pedas,Lainnya,571,22.7,43.7,28.1,40036
+Pisang Pilihan,Buah,109,2.6,0.3,20.4,18681
+Jus Import,Lainnya,95,7.3,1.4,13.8,36528
+Ikan Tuna Pilihan,Protein,163,15.4,15.5,0.6,72163
+Ketan Segar,Lainnya,348,6.6,2.9,79.5,16595
+Ikan Tuna Hitam,Protein,222,25.4,6.0,2.3,57187
+Mie Beku,Lainnya,447,17.8,10.9,54.2,87137
+Tempe Beku,Protein,280,8.1,18.7,55.8,61589
+Sawi Import,Lainnya,34,3.6,0.6,6.0,38877
+Susu Segar,Lainnya,93,3.6,6.1,27.1,39737
+Jus Curah,Lainnya,141,2.7,2.2,28.5,7162
+Ikan Tongkol Putih,Protein,135,23.7,6.3,1.9,67650
+Kacang Tanah Kemasan,Lainnya,337,22.1,14.8,35.2,87421
+Ikan Bandeng Hijau,Protein,170,26.7,7.9,1.6,65053
+Nugget Segar,Lainnya,326,4.0,10.1,44.0,80637
+Beras Putih,Karbohidrat,350,6.0,0.7,75.2,21620
+Kedelai Lokal,Lainnya,424,24.0,42.2,14.1,29037
+Mete Import,Lainnya,380,16.8,41.5,13.7,39163
+Daging Sapi Beku,Protein,159,23.9,14.6,4.6,121608
+Kopi Curah,Lainnya,62,6.0,1.5,20.2,14361
+Kacang Tanah Merah,Lainnya,492,28.8,33.7,44.7,16060
+Ikan Kembung Putih,Protein,231,23.1,5.1,2.5,62634
+Ketan Import,Lainnya,380,6.3,1.2,75.1,19201
+Ikan Kembung Import,Protein,247,23.4,6.1,1.7,96451
+Tomat Organik,Lainnya,26,2.7,0.7,10.8,16806
+Tempe Curah,Protein,337,16.8,13.0,22.2,13719
+Biskuit Organik,Lainnya,321,12.0,4.8,33.4,56028
+Ikan Kembung Manis,Protein,162,17.0,16.9,2.4,68998
+Roti Kemasan,Lainnya,207,13.7,15.7,15.3,42544
+Daging Sapi Tinggi Protein,Protein,146,26.1,21.5,3.5,56960
+Kopi Premium,Lainnya,83,1.9,7.5,27.0,35000
+Biskuit Pilihan,Lainnya,128,12.6,13.6,11.8,10239
+Mete Beku,Lainnya,335,29.7,26.1,48.0,48546
+Susu Lokal,Lainnya,71,7.1,3.4,15.4,9404
+Nugget Pilihan,Lainnya,161,19.0,26.6,54.4,11909
+Ketan Rendah Lemak,Lainnya,370,7.4,2.9,77.8,19460
+Beras Merah,Karbohidrat,369,8.8,1.9,79.2,14738
+Almond Organik,Lainnya,309,25.3,18.4,21.0,20815
+Nasi Tinggi Protein,Karbohidrat,346,7.4,1.8,80.4,15562
+Daging Kerbau Segar,Protein,162,20.4,20.7,4.7,168081
+Anggur Segar,Lainnya,55,2.2,0.6,23.2,42055
+Kopi Hitam,Lainnya,130,3.1,1.8,10.5,26144
+Tempe Rendah Lemak,Protein,146,17.2,20.3,49.0,16528
+Ikan Bandeng Tinggi Protein,Protein,243,20.5,16.2,0.1,43181
+Ikan Kembung Lokal,Protein,206,23.4,2.8,1.2,33474
+Nasi Pilihan,Karbohidrat,377,8.3,0.6,80.5,21407
+Ketan Manis,Lainnya,365,6.3,0.5,75.6,14752
+Sosis Manis,Lainnya,379,4.8,9.1,43.7,33210
+Jeruk Super,Lainnya,112,0.2,0.8,14.0,9073
+Almond Pedas,Lainnya,376,26.7,13.3,29.6,37958
+Beras Kemasan,Karbohidrat,355,8.5,0.8,75.2,19033
+Beras Organik,Karbohidrat,360,7.2,0.6,75.6,17167
+Ikan Tongkol Hijau,Protein,241,15.7,3.7,0.6,106608
+Daging Ayam Lokal,Protein,234,20.9,21.9,3.9,95691
+Kedelai Segar,Lainnya,303,32.3,20.8,47.2,61714
+Kacang Hijau Manis,Lainnya,563,26.4,40.1,27.4,28096
+Ikan Tuna Asin,Protein,223,27.4,3.7,0.3,93337
+Kedelai Organik,Lainnya,553,16.6,12.2,26.5,66034
+Kedelai Pedas,Lainnya,501,21.7,22.9,35.5,21540
+Kopi Hitam,Lainnya,27,5.7,7.4,24.3,10035
+Ikan Tuna Lokal,Protein,132,25.4,9.0,0.8,86347
+Nasi Segar,Karbohidrat,346,8.8,2.0,78.3,16947
+Sosis Pilihan,Lainnya,244,3.3,8.1,10.2,41628
+Daging Kambing Beku,Protein,282,26.0,14.0,1.8,163480
+Wortel Curah,Sayur,37,1.4,0.8,7.9,37759
+Beras Kemasan,Karbohidrat,358,8.4,1.3,79.5,13808
+Ketan Putih,Lainnya,354,7.8,2.5,79.5,20443
+Susu Rendah Lemak,Lainnya,21,4.2,6.6,23.6,36355
+Mangga Curah,Lainnya,109,1.2,1.6,26.4,25816
+Kangkung Merah,Sayur,51,4.2,0.7,7.5,14552
+Teh Putih,Lainnya,109,5.8,3.4,4.4,19672
+Kacang Tanah Manis,Lainnya,471,31.4,16.5,49.3,49838
+Almond Lokal,Lainnya,460,34.1,41.7,10.5,85615
+Ikan Kembung Manis,Protein,142,17.8,17.5,0.4,97732
+Daging Kerbau Curah,Protein,280,18.5,23.2,5.0,159848
+Daging Kambing Manis,Protein,299,23.9,5.4,3.5,157123
+Ikan Kembung Kemasan,Protein,216,21.9,12.8,1.1,29266
+Ikan Tuna Manis,Protein,138,25.9,1.3,0.1,116302
+Kacang Hijau Super,Lainnya,391,31.3,17.6,39.0,48681
+Melon Rendah Lemak,Buah,84,1.4,0.9,24.0,12108
+Mete Tinggi Protein,Lainnya,565,18.9,18.7,12.1,78884
+Melon Merah,Buah,104,2.9,0.7,22.3,57591
+Apel Tinggi Protein,Buah,42,2.2,0.2,27.4,16369
+Beras Lokal,Karbohidrat,367,7.4,0.6,79.4,19161
+Kopi Organik,Lainnya,17,5.0,4.3,6.6,39351
+Melon Merah,Buah,58,2.6,0.2,26.4,30243
+Mete Pedas,Lainnya,578,32.8,14.3,19.1,44043
+Daging Ayam Super,Protein,151,21.7,6.8,1.0,144840
+Mie Pilihan,Lainnya,118,4.2,24.3,11.8,12528
+Mie Tinggi Protein,Lainnya,212,15.2,9.1,53.2,89754
+Bayam Hitam,Protein,53,4.9,0.4,5.8,35283
+Kacang Hijau Lokal,Lainnya,349,31.4,31.8,38.1,24686
+Ikan Kembung Lokal,Protein,214,17.0,7.1,1.3,56255
+Jeruk Putih,Lainnya,72,2.2,0.6,13.6,11092
+Ikan Kembung Curah,Protein,141,18.3,9.4,1.2,119627
+Ketan Pilihan,Lainnya,344,6.0,1.7,76.5,21309
+Kopi Pilihan,Lainnya,46,7.5,0.7,28.3,14701
+Beras Rendah Lemak,Karbohidrat,373,7.7,2.7,77.6,13152
+Kedelai Merah,Lainnya,596,28.4,20.5,31.2,21605
+Ikan Tongkol Kemasan,Protein,118,20.1,7.9,0.6,40585
+Tahu Segar,Protein,294,14.6,10.1,18.2,63217
+Daging Kerbau Hijau,Protein,246,28.9,15.6,1.5,141633
+Kopi Curah,Lainnya,68,7.7,0.4,20.2,37559
+Kangkung Putih,Sayur,23,4.3,0.5,4.3,10802
+Daging Sapi Pedas,Protein,286,24.8,23.7,1.0,111086
+Daging Ayam Pilihan,Protein,170,23.2,11.4,4.8,152890
+Mentimun Lokal,Lainnya,29,3.0,0.6,8.6,33737
+Daging Kerbau Asin,Protein,258,21.4,3.5,2.6,122702
+Mie Hijau,Lainnya,288,10.5,5.1,28.7,94304
+Jus Premium,Lainnya,132,2.9,2.1,3.6,7719
+Sawi Premium,Lainnya,60,4.3,0.9,4.6,13516
+Ikan Bandeng Tinggi Protein,Protein,128,21.0,5.7,2.6,103374
+Mangga Hitam,Lainnya,69,0.8,0.6,18.9,59161
+Ikan Kembung Pedas,Protein,233,19.8,5.8,0.5,32516
+Ketan Hijau,Lainnya,357,7.8,2.7,78.0,17120
+Kacang Hijau Tinggi Protein,Lainnya,326,28.1,44.1,37.1,48314
+Mangga Segar,Lainnya,71,2.2,1.0,8.6,58683
+Daging Ayam Lokal,Protein,289,21.9,4.4,1.7,176905
+Biskuit Organik,Lainnya,429,2.0,29.6,55.9,44481
+Jus Segar,Lainnya,30,2.5,2.3,4.0,11709
+Ikan Bandeng Pilihan,Protein,160,24.1,9.8,1.6,73239
+Tomat Lokal,Lainnya,22,2.0,0.7,11.5,26298
+Pepaya Beku,Buah,113,2.1,1.7,24.6,45495
+Kopi Merah,Lainnya,105,1.2,4.4,25.3,35363
+Brokoli Organik,Sayur,34,2.9,0.6,5.9,28957
+Wortel Beku,Sayur,38,4.5,0.7,11.7,15781
+Mete Kemasan,Lainnya,337,28.5,11.5,29.4,46951
+Almond Manis,Lainnya,590,22.3,27.1,21.5,62986
+Jus Merah,Lainnya,147,7.8,6.7,24.2,38630
+Kacang Tanah Hijau,Lainnya,563,25.1,29.7,47.9,17336
+Ikan Tongkol Beku,Protein,100,17.7,16.9,0.8,91378
+Daging Kambing Pilihan,Protein,180,19.2,7.9,4.4,94226
+Daging Ayam Import,Protein,244,25.0,4.5,0.5,160732
+Daging Kerbau Pilihan,Protein,148,28.9,9.3,0.6,51989
+Kacang Hijau Import,Lainnya,306,16.9,36.1,40.4,67013
+Ikan Lele Premium,Protein,167,27.4,6.7,0.9,88514
+Jus Manis,Lainnya,88,1.5,0.6,15.1,18204
+Mie Rendah Lemak,Lainnya,273,2.7,24.8,50.4,67877
+Almond Organik,Lainnya,560,29.8,36.8,32.2,57804
+Kubis Asin,Lainnya,46,3.1,0.5,6.6,35731
+Susu Beku,Lainnya,133,4.4,5.8,22.7,25309
+Kedelai Import,Lainnya,536,24.9,22.1,15.8,48159
+Nugget Organik,Lainnya,389,9.8,10.4,52.1,75525
+Kacang Hijau Organik,Lainnya,329,21.0,25.1,25.6,87572
+Tempe Curah,Protein,340,10.3,21.5,55.5,98257
+Jus Merah,Lainnya,27,3.7,0.2,12.8,28507
+Ketan Import,Lainnya,362,8.7,0.3,78.1,15642
+Sawi Rendah Lemak,Lainnya,31,1.5,0.1,8.2,30499
+Kopi Import,Lainnya,31,7.3,2.9,17.9,22862
+Biskuit Beku,Lainnya,394,6.3,20.5,20.9,46832
+Daging Ayam Merah,Protein,142,21.8,13.8,1.1,162455
+Ketan Organik,Lainnya,347,6.6,0.7,80.9,21039
+Ikan Tongkol Rendah Lemak,Protein,185,23.0,10.2,2.8,57679
+Mete Segar,Lainnya,490,34.7,25.9,25.3,22173
+Mentimun Tinggi Protein,Lainnya,32,3.0,0.9,9.9,6324
+Kacang Hijau Rendah Lemak,Lainnya,594,23.7,21.8,32.5,87431
+Teh Rendah Lemak,Lainnya,95,6.6,7.5,7.4,32194
+Ikan Tongkol Lokal,Protein,155,23.5,1.9,2.0,108839
+Kacang Hijau Hitam,Lainnya,465,22.4,23.1,39.0,42687
+Melon Import,Buah,96,1.2,0.5,27.3,55774
+Ketan Manis,Lainnya,366,8.4,3.0,80.5,12857
+Mete Pedas,Lainnya,372,31.6,14.8,15.7,45802
+Wortel Beku,Sayur,38,2.3,0.8,10.2,32869
+Susu Kemasan,Lainnya,25,2.0,2.0,2.5,14673
+Mangga Rendah Lemak,Lainnya,44,1.2,0.0,17.5,13143
+Kopi Organik,Lainnya,26,3.0,6.5,23.4,21424
+Daging Sapi Beku,Protein,141,22.3,13.4,2.8,176104
+Almond Asin,Lainnya,325,33.8,30.6,17.8,75224
+Ikan Bandeng Rendah Lemak,Protein,126,21.9,10.5,0.4,67612
+Pisang Tinggi Protein,Buah,80,2.2,0.8,10.1,32987
+Susu Merah,Lainnya,60,5.6,3.9,6.3,17026
+Ikan Tuna Hitam,Protein,116,25.9,5.2,2.1,59817
+Daging Ayam Super,Protein,256,21.4,8.6,0.7,98490
+Ikan Bandeng Curah,Protein,211,27.0,4.7,1.1,75709
+Wortel Import,Sayur,58,3.1,0.3,11.5,33417
+Daging Kambing Manis,Protein,192,19.1,20.6,0.3,164380
+Melon Premium,Buah,78,0.1,0.9,8.8,36539
+Daging Kerbau Manis,Protein,177,18.8,12.5,2.3,177963
+Ikan Tuna Rendah Lemak,Protein,138,25.2,9.7,1.3,76647
+Ikan Kembung Merah,Protein,184,20.5,2.5,0.1,83976
+Beras Lokal,Karbohidrat,359,6.2,0.3,75.2,20918
+Apel Pilihan,Buah,74,0.2,1.2,9.8,38934
+Kedelai Merah,Lainnya,300,20.8,21.3,40.3,74588
+Anggur Hitam,Lainnya,78,1.2,1.1,17.0,17230
+Mete Hitam,Lainnya,558,25.6,19.6,24.7,46458
+Tomat Hitam,Lainnya,19,3.4,0.4,3.9,5560
+Nasi Lokal,Karbohidrat,371,6.4,1.4,81.8,15583
+Daging Kambing Super,Protein,135,23.0,4.2,3.6,150923
+Teh Lokal,Lainnya,90,6.5,4.3,28.1,39976
+Anggur Hijau,Lainnya,89,1.0,2.0,11.7,26682
+Daging Sapi Curah,Protein,189,27.6,23.0,4.2,140417
+Tempe Pilihan,Protein,386,9.5,28.7,20.4,28978
+Mete Segar,Lainnya,492,18.4,41.5,36.2,24335
+Teh Import,Lainnya,77,7.7,6.1,4.9,33601
+Jus Manis,Lainnya,60,4.0,3.1,8.2,34454
+Ikan Kembung Super,Protein,206,22.1,14.7,2.1,69188
+Susu Manis,Lainnya,82,5.5,5.4,10.1,6501
+Mentimun Hijau,Lainnya,28,2.9,0.8,3.8,20681
+Jeruk Organik,Lainnya,61,0.1,1.0,17.2,15013
+Mie Premium,Lainnya,154,19.8,9.7,54.2,55201
+Kacang Tanah Asin,Lainnya,315,19.7,32.5,43.4,56031
+Kacang Tanah Hijau,Lainnya,409,33.2,37.3,38.9,69901
+Ikan Lele Merah,Protein,237,21.8,12.0,2.7,67816
+Roti Hijau,Lainnya,320,8.5,12.1,24.3,51805
+Kedelai Putih,Lainnya,544,20.9,18.4,47.6,39404
+Daging Sapi Lokal,Protein,216,26.8,17.5,1.1,177578
+Susu Premium,Lainnya,126,7.3,2.6,12.4,21247
+Daging Kerbau Tinggi Protein,Protein,279,25.1,12.1,1.9,63800
+Mie Tinggi Protein,Lainnya,425,6.9,24.1,39.3,70750
+Semangka Pilihan,Lainnya,63,2.5,0.0,8.2,17904
+Biskuit Hijau,Lainnya,257,10.0,14.0,53.0,20131
+Biskuit Tinggi Protein,Lainnya,297,7.6,19.1,48.8,22617
+Nasi Lokal,Karbohidrat,352,6.8,1.6,75.7,18695
+Wortel Beku,Sayur,24,1.6,0.6,4.8,28165
+Ikan Tongkol Import,Protein,235,20.9,1.8,2.3,71606
+Daging Kerbau Pilihan,Protein,163,27.1,16.4,0.1,69780
+Beras Putih,Karbohidrat,364,6.3,2.7,79.3,21142
+Mentimun Hitam,Lainnya,37,2.8,0.1,3.8,5221
+Anggur Curah,Lainnya,74,1.6,0.3,26.7,17392
+Brokoli Manis,Sayur,22,1.2,0.1,9.7,31108
+Pepaya Asin,Buah,55,0.2,0.1,26.3,39123
+Melon Segar,Buah,110,2.5,0.8,10.2,21133
+Nugget Beku,Lainnya,355,8.7,8.9,54.4,77067
+Daging Sapi Rendah Lemak,Protein,284,28.1,23.7,0.0,111422
+Kedelai Hitam,Lainnya,406,29.9,16.9,47.0,37341
+Mangga Pilihan,Lainnya,30,0.3,1.0,24.4,23254
+Susu Rendah Lemak,Lainnya,72,2.2,3.4,6.1,35801
+Daging Ayam Pilihan,Protein,149,27.4,8.4,0.4,166002
+Tahu Hitam,Protein,297,3.8,9.8,26.4,78228
+Mete Import,Lainnya,560,32.6,41.0,28.4,39997
+Daging Ayam Pedas,Protein,123,26.0,9.9,4.5,137365
+Daging Ayam Hijau,Protein,187,22.2,5.1,2.9,115340
+Daging Kambing Lokal,Protein,297,21.6,13.7,0.3,119330
+Daging Kerbau Putih,Protein,213,21.7,7.0,3.7,136177
+Apel Tinggi Protein,Buah,83,0.5,1.9,25.4,57866
+Mie Rendah Lemak,Lainnya,163,2.0,21.6,21.2,93101
+Kacang Hijau Tinggi Protein,Lainnya,388,33.2,20.9,26.6,58417
+Ikan Kembung Pedas,Protein,249,27.9,17.2,1.9,31557
+Daging Sapi Segar,Protein,131,18.7,5.0,3.9,150952
+Teh Hitam,Lainnya,71,5.1,6.5,16.9,18350
+Roti Pilihan,Lainnya,311,10.6,27.6,51.2,40221
+Tahu Hijau,Protein,132,3.6,10.2,18.0,94000
+Ketan Import,Lainnya,354,7.2,1.4,80.5,14731
+Pepaya Premium,Buah,51,1.3,0.9,28.3,38239
+Biskuit Manis,Lainnya,260,14.6,18.7,35.4,70487
+Susu Pilihan,Lainnya,43,3.9,5.1,13.2,17782
+Mentimun Organik,Lainnya,41,4.9,0.1,10.9,37866
+Roti Organik,Lainnya,277,19.9,11.4,52.5,58193
+Nugget Premium,Lainnya,427,12.7,3.3,53.9,53051
+Kedelai Rendah Lemak,Lainnya,332,15.2,19.6,40.6,65655
+Daging Ayam Hitam,Protein,284,21.3,10.9,2.9,154370
+Brokoli Beku,Sayur,48,1.6,0.4,4.9,16141
+Biskuit Merah,Lainnya,235,19.3,17.8,55.5,78197
+Sawi Kemasan,Lainnya,15,4.7,0.2,4.9,27994
+Pisang Segar,Buah,109,2.1,0.5,15.5,45889
+Kacang Hijau Asin,Lainnya,438,27.6,26.3,27.1,81180
+Jus Premium,Lainnya,89,5.0,1.4,27.0,19577
+Ikan Lele Import,Protein,108,15.4,1.1,2.9,108011
+Ikan Tongkol Putih,Protein,114,20.5,17.0,1.9,44289
+Nasi Import,Karbohidrat,352,8.7,3.0,78.4,18799
+Jus Putih,Lainnya,25,1.8,7.0,6.0,19441
+Tempe Hijau,Protein,244,18.6,24.9,55.1,86324
+Jeruk Pilihan,Lainnya,46,0.9,1.4,23.3,26796
+Wortel Pilihan,Sayur,36,1.6,0.5,7.9,17127
+Ikan Kembung Pilihan,Protein,157,24.2,10.1,1.5,57406
+Daging Ayam Rendah Lemak,Protein,137,30.0,9.6,3.9,73267
+Sosis Asin,Lainnya,144,2.6,23.7,21.6,65124
+Nasi Kemasan,Karbohidrat,349,6.4,1.0,79.1,16553
+Pisang Tinggi Protein,Buah,91,2.1,1.0,10.6,51429
+Bayam Segar,Protein,24,2.4,0.4,6.1,32179
+Roti Asin,Lainnya,435,19.0,7.9,52.3,46236
+Tomat Premium,Lainnya,27,1.9,0.3,3.3,8649
+Kacang Hijau Pilihan,Lainnya,589,24.9,18.4,26.2,32306
+Ikan Tongkol Segar,Protein,175,15.4,12.8,2.0,86031
+Kacang Hijau Manis,Lainnya,425,18.7,30.8,36.9,76562
+Ikan Kembung Super,Protein,116,27.3,12.4,2.2,84003
+Susu Curah,Lainnya,97,3.0,5.5,26.3,29394
+Kubis Hijau,Lainnya,59,1.7,0.8,10.9,15350
+Daging Kambing Organik,Protein,250,23.3,10.2,4.4,95181
+Susu Putih,Lainnya,79,0.1,7.5,16.1,22038
+Ikan Lele Lokal,Protein,117,22.5,1.3,0.3,92703
+Kopi Beku,Lainnya,75,6.0,8.0,21.4,38378
+Ikan Tongkol Super,Protein,201,15.1,8.3,2.0,70103
+Beras Import,Karbohidrat,343,6.3,0.2,78.6,12046
+Ikan Tongkol Kemasan,Protein,202,23.6,3.5,0.0,47290
+Brokoli Curah,Sayur,45,1.9,0.3,4.4,35244
+Daging Ayam Manis,Protein,125,21.6,14.1,0.9,168250
+Wortel Asin,Sayur,27,1.1,0.5,4.6,33449
+Mete Organik,Lainnya,401,23.6,28.7,29.0,24473
+Kedelai Asin,Lainnya,508,29.1,44.3,30.6,15240
+Mete Merah,Lainnya,561,28.4,12.6,43.3,42450
+Daging Sapi Merah,Protein,213,28.3,23.9,0.3,58777
+Teh Organik,Lainnya,47,2.4,5.1,16.9,27361
+Wortel Beku,Sayur,60,3.1,0.2,10.4,17443
+Ikan Tuna Hijau,Protein,196,26.6,12.3,1.2,104717
+Daging Sapi Hitam,Protein,130,28.9,18.2,0.2,89052
+Mie Import,Lainnya,253,15.9,11.0,21.6,20232
+Susu Pilihan,Lainnya,69,3.4,7.2,28.0,13711
+Ikan Tuna Kemasan,Protein,199,23.9,6.9,1.4,57282
+Jus Organik,Lainnya,91,1.9,3.2,13.2,6056
+Jus Manis,Lainnya,80,6.2,6.6,19.4,18978
+Biskuit Hijau,Lainnya,389,6.5,28.8,12.7,65393
+Ketan Curah,Lainnya,363,6.9,2.3,77.8,15293
+Semangka Segar,Lainnya,104,1.6,1.0,18.6,13333
+Nasi Rendah Lemak,Karbohidrat,365,8.3,2.8,77.7,21809
+Mangga Asin,Lainnya,73,2.0,1.1,29.5,54370
+Daging Kerbau Premium,Protein,255,25.7,23.2,0.6,171706
+Beras Pedas,Karbohidrat,376,6.9,0.2,81.8,15903
+Nasi Tinggi Protein,Karbohidrat,356,8.7,1.4,77.5,20998
+Almond Import,Lainnya,442,31.2,41.6,47.9,20876
+Sawi Putih,Lainnya,28,2.9,0.6,4.4,24144
+Beras Asin,Karbohidrat,356,7.2,3.0,78.0,14005
+Kacang Tanah Premium,Lainnya,459,21.7,25.8,24.5,39388
+Mete Manis,Lainnya,391,15.4,39.3,35.6,20175
+Ketan Premium,Lainnya,348,8.6,3.0,80.5,19742
+Nasi Rendah Lemak,Karbohidrat,351,6.3,2.7,76.8,15049
+Apel Curah,Buah,98,2.2,1.0,16.3,14818
+Jus Beku,Lainnya,60,6.0,7.1,8.0,32500
+Roti Pilihan,Lainnya,224,18.2,21.7,32.9,21197
+Bayam Manis,Protein,33,4.9,0.9,5.5,17553
+Kedelai Kemasan,Lainnya,420,28.1,25.5,36.4,45252
+Daging Sapi Lokal,Protein,266,26.1,16.0,2.4,114382
+Pepaya Organik,Buah,79,2.5,0.9,8.7,18657
+Nasi Tinggi Protein,Karbohidrat,365,7.7,0.4,76.3,19751
+Tomat Beku,Lainnya,22,4.0,0.4,8.4,14014
+Ikan Tuna Super,Protein,197,27.0,14.6,1.1,32049
+Daging Sapi Putih,Protein,242,23.3,20.7,4.6,166894
+Tahu Beku,Protein,302,9.7,28.5,12.4,67897
+Ikan Kembung Super,Protein,185,17.4,3.6,2.8,49252
+Apel Organik,Buah,60,0.1,1.6,25.0,45840
+Ketan Asin,Lainnya,341,6.5,1.0,77.9,12833
+Daging Sapi Curah,Protein,156,25.3,3.6,4.0,148330
+Daging Ayam Import,Protein,124,18.7,13.8,1.7,162435
+Susu Lokal,Lainnya,70,5.4,2.8,7.3,20627
+Ketan Rendah Lemak,Lainnya,349,8.6,1.3,80.3,15646
+Kubis Tinggi Protein,Lainnya,16,3.6,0.3,5.3,29264
+Mangga Merah,Lainnya,45,2.7,1.1,18.2,51882
+Beras Asin,Karbohidrat,344,8.3,0.4,76.4,14210
+Daging Sapi Rendah Lemak,Protein,258,25.1,11.5,3.6,140529
+Sawi Import,Lainnya,58,4.0,0.2,11.0,24995
+Kopi Hitam,Lainnya,149,5.9,6.0,16.6,37594
+Nugget Manis,Lainnya,274,17.3,10.3,12.4,51216
+Kacang Hijau Tinggi Protein,Lainnya,565,17.5,26.9,10.3,23343
+Jus Hijau,Lainnya,31,2.1,4.4,8.3,11908
+Jus Segar,Lainnya,109,6.9,0.9,18.5,25605
+Susu Putih,Lainnya,50,4.0,1.3,13.4,25652
+Almond Hijau,Lainnya,508,22.2,10.0,21.0,33077
+Almond Organik,Lainnya,510,19.1,10.3,40.6,36761
+Semangka Manis,Lainnya,34,0.4,1.8,8.4,12591
+Kopi Hitam,Lainnya,18,4.7,4.7,29.1,13206
+Jus Pilihan,Lainnya,56,2.7,6.5,9.1,6685
+Mete Lokal,Lainnya,555,18.4,42.0,37.3,80527
+Semangka Pedas,Lainnya,74,1.7,0.0,10.1,39822
+Ketan Asin,Lainnya,359,8.3,0.5,79.6,14015
+Tahu Pilihan,Protein,109,8.7,13.2,14.2,81195
+Jus Pedas,Lainnya,54,4.5,7.0,29.5,32651
+Daging Kerbau Pilihan,Protein,239,29.6,3.3,3.6,120464
+Nasi Premium,Karbohidrat,356,6.0,1.4,77.9,17801
+Nugget Segar,Lainnya,121,12.7,23.5,15.4,63377
+Pisang Hijau,Buah,65,2.8,0.6,11.5,17124
+Kacang Tanah Kemasan,Lainnya,509,21.5,44.3,35.9,16798
+Pisang Lokal,Buah,38,1.4,1.5,24.4,52246
+Jeruk Premium,Lainnya,31,0.3,0.9,18.5,21810
+Nasi Tinggi Protein,Karbohidrat,357,7.3,2.9,81.0,17967
+Daging Kerbau Rendah Lemak,Protein,201,18.8,24.9,0.8,119447
+Anggur Beku,Lainnya,43,0.9,1.1,23.7,30745
+Jeruk Pilihan,Lainnya,68,0.7,1.8,25.2,15112
+Anggur Asin,Lainnya,30,0.7,0.2,9.7,22392
+Wortel Putih,Sayur,57,4.8,0.9,9.2,5971
+Semangka Super,Lainnya,120,1.8,0.6,18.3,54298
+Kubis Segar,Lainnya,16,3.5,0.3,3.6,6179
+Nasi Tinggi Protein,Karbohidrat,340,6.2,0.8,79.4,14175
+Mie Import,Lainnya,367,2.7,14.1,30.0,90300
+Kedelai Beku,Lainnya,414,27.3,27.0,27.5,22159
+Apel Manis,Buah,76,0.5,1.7,29.3,26372
+Daging Kerbau Beku,Protein,175,22.8,3.2,3.5,79531
+Pisang Organik,Buah,73,1.1,0.8,17.6,21942
+Daging Kerbau Merah,Protein,270,22.0,6.5,4.4,65872
+Beras Pilihan,Karbohidrat,366,6.7,1.8,79.2,21505
+Sawi Organik,Lainnya,16,3.0,0.1,5.7,23253
+Ikan Tongkol Curah,Protein,164,17.9,1.6,1.9,97034
+Pepaya Putih,Buah,69,1.3,0.0,23.8,11296
+Wortel Merah,Sayur,29,2.8,0.9,3.5,16395
+Kopi Beku,Lainnya,35,7.6,5.4,19.9,18145
+Jus Organik,Lainnya,114,6.9,1.9,21.4,30738
+Beras Beku,Karbohidrat,365,6.4,2.1,78.9,19759
+Sosis Rendah Lemak,Lainnya,408,17.7,29.9,54.0,61158
+Kangkung Pilihan,Sayur,46,1.2,0.2,11.7,10378
+Biskuit Premium,Lainnya,232,12.3,23.9,38.7,38414
+Jus Pedas,Lainnya,148,1.0,3.8,17.6,39744
+Daging Sapi Super,Protein,286,23.3,3.1,4.4,99774
+Kacang Hijau Merah,Lainnya,367,16.6,17.6,29.0,38360
+Kedelai Pedas,Lainnya,493,22.1,40.3,39.1,47603
+Melon Beku,Buah,51,1.6,0.2,24.7,47386
+Ikan Tongkol Pedas,Protein,246,23.1,12.1,1.5,30980
+Teh Pedas,Lainnya,132,6.8,4.3,13.6,25398
+Mete Asin,Lainnya,421,27.2,38.6,23.4,37714
+Sosis Kemasan,Lainnya,148,4.5,29.7,43.6,99148
+Daging Sapi Merah,Protein,189,26.5,20.2,3.3,52441
+Nasi Pilihan,Karbohidrat,367,7.4,2.1,80.2,13491
+Ikan Bandeng Tinggi Protein,Protein,96,18.9,3.2,0.5,29205
+Jeruk Manis,Lainnya,78,0.9,1.8,11.1,50751
+Sosis Tinggi Protein,Lainnya,211,7.1,20.1,41.7,21375
+Ikan Bandeng Segar,Protein,140,15.1,6.1,0.1,65867
+Susu Rendah Lemak,Lainnya,143,3.1,1.3,7.3,13630
+Daging Kambing Premium,Protein,257,29.7,19.2,4.1,59045
+Jus Pedas,Lainnya,77,2.1,0.7,16.0,29681
+Ikan Bandeng Tinggi Protein,Protein,228,27.7,10.1,0.8,37641
+Almond Putih,Lainnya,370,32.0,12.1,49.4,64798
+Tomat Lokal,Lainnya,22,3.2,0.1,9.1,12230
+Beras Segar,Karbohidrat,344,7.1,0.9,77.1,21564
+Mentimun Manis,Lainnya,40,4.4,0.5,3.8,19284
+Tahu Pedas,Protein,301,8.6,9.1,56.8,60229
+Sosis Putih,Lainnya,377,18.7,8.6,13.5,55448
+Susu Lokal,Lainnya,128,7.5,2.4,26.6,6953
+Ikan Tuna Premium,Protein,131,19.1,15.7,0.3,72170
+Wortel Pilihan,Sayur,44,3.2,0.0,5.4,12303
+Ikan Tongkol Kemasan,Protein,153,16.9,13.0,0.8,79429
+Daging Kambing Putih,Protein,291,20.2,22.6,4.8,70435
+Ikan Lele Asin,Protein,230,27.9,14.3,2.1,111458
+Kacang Hijau Rendah Lemak,Lainnya,402,23.8,35.0,43.9,44462
+Nugget Merah,Lainnya,254,12.2,27.2,23.0,27858
+Mie Merah,Lainnya,147,9.2,29.4,23.7,31184
+Tempe Tinggi Protein,Protein,397,5.6,15.2,34.1,94375
+Pisang Rendah Lemak,Buah,61,0.5,0.9,10.6,11179
+Brokoli Tinggi Protein,Sayur,22,3.3,0.1,3.7,11972
+Mangga Lokal,Lainnya,38,0.8,0.9,15.9,29067
+Nasi Import,Karbohidrat,371,8.9,2.8,78.2,20223
+Daging Sapi Hitam,Protein,133,26.1,23.0,2.3,82554
+Bayam Pedas,Protein,42,3.3,0.5,6.4,13715
+Pisang Super,Buah,94,1.7,0.6,23.1,44308
+Ikan Tuna Import,Protein,123,20.4,2.7,2.5,94387
+Daging Kerbau Hijau,Protein,137,18.6,16.9,3.2,105703
+Kedelai Merah,Lainnya,500,31.2,27.9,39.1,15011
+Ikan Lele Organik,Protein,156,16.5,16.0,1.5,33499
+Kedelai Beku,Lainnya,302,31.3,18.2,48.0,60158
+Jus Hitam,Lainnya,22,1.5,5.4,4.9,22497
+Nasi Beku,Karbohidrat,345,7.1,3.0,81.6,17034
+Ikan Lele Rendah Lemak,Protein,95,24.5,11.0,1.5,32212
+Beras Segar,Karbohidrat,375,8.2,2.6,81.8,12621
+Daging Kambing Beku,Protein,174,29.4,24.7,1.1,143521
+Kedelai Premium,Lainnya,492,26.2,14.0,26.7,63763
+Kedelai Hijau,Lainnya,414,30.9,22.6,37.2,84606
+Ikan Tuna Rendah Lemak,Protein,137,25.1,12.4,2.5,89826
+Pisang Hitam,Buah,72,0.4,1.1,12.3,42038
+Anggur Kemasan,Lainnya,94,0.7,1.8,9.0,52761
+Ikan Bandeng Curah,Protein,168,21.1,15.5,0.7,64013
+Kangkung Premium,Sayur,29,2.7,1.0,11.5,35281
+Kacang Tanah Curah,Lainnya,498,28.2,12.2,40.6,58724
+Kacang Tanah Rendah Lemak,Lainnya,396,33.9,15.6,24.2,61552
+Beras Rendah Lemak,Karbohidrat,363,8.0,0.0,78.1,19465
+Kopi Super,Lainnya,121,5.6,6.6,10.6,28577
+Daging Kerbau Lokal,Protein,145,19.7,5.6,0.1,138830
+Daging Kambing Tinggi Protein,Protein,265,21.7,6.5,4.7,143375
+Daging Sapi Manis,Protein,228,22.1,21.4,0.4,158006
+Kedelai Super,Lainnya,414,30.7,27.8,44.8,80179
+Ketan Beku,Lainnya,351,8.8,2.3,80.7,18163
+Sawi Merah,Lainnya,23,2.2,0.3,4.4,33746
+Susu Beku,Lainnya,70,0.6,6.4,10.4,19388
+Tahu Hitam,Protein,410,6.3,19.2,45.5,56526
+Beras Tinggi Protein,Karbohidrat,371,7.0,2.3,79.3,17247
+Jeruk Import,Lainnya,55,0.3,0.9,16.0,28480
+Beras Hitam,Karbohidrat,347,6.8,0.3,76.7,20033
+Kopi Lokal,Lainnya,96,0.1,6.6,2.9,37041
+Anggur Rendah Lemak,Lainnya,108,1.7,1.0,25.6,8472
+Nugget Segar,Lainnya,207,15.6,2.3,56.2,76815
+Nasi Curah,Karbohidrat,376,7.6,1.2,77.7,15798
+Mangga Pilihan,Lainnya,55,2.6,1.3,28.7,24199
+Brokoli Asin,Sayur,25,4.9,0.3,7.9,18175
+Ikan Bandeng Pedas,Protein,173,20.0,9.8,0.6,77223
+Kubis Rendah Lemak,Lainnya,46,4.0,0.1,10.9,37227
+Wortel Hitam,Sayur,37,4.9,0.8,8.1,38970
+Melon Hijau,Buah,84,2.4,0.8,15.3,41303
+Roti Kemasan,Lainnya,262,3.5,21.8,16.2,97385
+Nugget Import,Lainnya,184,8.4,7.5,48.6,77161
+Ketan Premium,Lainnya,376,7.1,0.3,80.2,15900
+Tahu Curah,Protein,360,2.3,25.8,52.8,76775
+Pepaya Curah,Buah,110,1.1,1.7,12.9,29386
+Daging Kambing Manis,Protein,176,19.5,15.7,3.6,80416
+Roti Organik,Lainnya,424,18.4,25.6,38.3,21203
+Brokoli Pilihan,Sayur,39,1.1,0.7,6.8,37705
+Ikan Tongkol Hijau,Protein,169,22.8,4.5,1.4,95479
+Tomat Hitam,Lainnya,45,4.9,0.4,9.2,33330
+Bayam Putih,Protein,59,4.5,0.2,3.3,34399
+Ikan Kembung Lokal,Protein,139,22.9,14.4,0.4,89142
+Ikan Tuna Putih,Protein,229,19.1,1.6,1.8,61526
+Ikan Bandeng Beku,Protein,166,27.7,10.2,0.6,26519
+Ikan Lele Pilihan,Protein,216,20.8,14.8,0.4,89636
+Ketan Curah,Lainnya,376,8.2,2.9,78.5,13299
+Kopi Super,Lainnya,16,1.9,6.7,16.9,10133
+Daging Kerbau Hitam,Protein,121,22.8,24.8,3.2,111323
+Kangkung Super,Sayur,16,4.7,0.8,3.5,15291
+Semangka Lokal,Lainnya,71,2.5,1.5,9.1,12053
+Pepaya Pedas,Buah,58,1.9,0.4,16.4,32353
+Nugget Pilihan,Lainnya,217,6.8,17.0,48.3,22547
+Bayam Manis,Protein,58,1.1,0.7,5.8,30971
+Daging Sapi Manis,Protein,213,21.8,21.8,3.7,99895
+Almond Pedas,Lainnya,325,22.4,24.8,14.4,79254
+Beras Segar,Karbohidrat,370,7.3,2.6,78.2,21365
+Ketan Hijau,Lainnya,372,6.7,0.1,81.2,17430
+Ketan Kemasan,Lainnya,372,7.0,2.7,78.9,14423
+Daging Kambing Pedas,Protein,188,24.1,21.3,2.3,71497
+Daging Kerbau Merah,Protein,269,22.4,9.7,3.0,146143
+Teh Merah,Lainnya,32,6.1,1.8,19.4,32726
+Ikan Tongkol Organik,Protein,177,23.0,1.3,2.6,50876
+Daging Kambing Organik,Protein,237,27.4,16.0,2.0,122963
+Teh Beku,Lainnya,144,4.7,5.6,10.0,32403
+Melon Pedas,Buah,94,1.5,0.6,25.2,35825
+Ketan Tinggi Protein,Lainnya,364,7.5,2.9,77.0,19662
+Kacang Hijau Pilihan,Lainnya,504,31.4,35.9,39.2,50397
+Kedelai Putih,Lainnya,392,20.3,35.5,33.3,56638
+Kacang Hijau Pilihan,Lainnya,575,18.0,30.6,34.9,71991
+Bayam Tinggi Protein,Protein,54,2.9,0.7,8.8,11143
+Kacang Tanah Tinggi Protein,Lainnya,371,29.2,16.6,20.6,82136
+Susu Manis,Lainnya,11,7.9,7.9,15.3,24020
+Kangkung Kemasan,Sayur,23,1.9,0.2,8.5,13492
+Biskuit Premium,Lainnya,155,7.0,10.8,20.6,68893
+Kacang Tanah Beku,Lainnya,439,21.8,38.9,23.6,56358
+Ikan Bandeng Asin,Protein,165,20.4,1.5,2.6,101515
+Ikan Lele Lokal,Protein,106,27.1,1.4,1.5,67745
+Ketan Segar,Lainnya,373,8.9,0.2,80.9,19827
+Teh Rendah Lemak,Lainnya,124,6.7,4.6,13.2,14436
+Beras Segar,Karbohidrat,352,8.2,1.1,75.6,20146
+Jeruk Kemasan,Lainnya,61,1.0,0.7,14.2,40875
+Nugget Pedas,Lainnya,178,15.5,28.6,24.8,16891
+Teh Rendah Lemak,Lainnya,100,2.8,0.3,2.8,20197
+Wortel Putih,Sayur,23,3.7,0.6,10.5,16674
+Ikan Tongkol Pedas,Protein,147,25.1,3.7,1.9,73216
+Mie Rendah Lemak,Lainnya,101,11.7,23.1,31.9,51672
+Mete Pedas,Lainnya,401,29.8,14.7,25.8,25608
+Beras Hitam,Karbohidrat,342,6.8,2.3,78.5,18080
+Pepaya Kemasan,Buah,111,2.5,1.1,19.5,35686
+Daging Ayam Hijau,Protein,221,27.1,14.3,3.5,178294
+Ikan Tuna Kemasan,Protein,169,26.7,13.3,1.0,115060
+Daging Kerbau Putih,Protein,183,25.8,14.9,4.7,161309
+Ikan Tuna Premium,Protein,187,23.1,11.6,1.7,58687
+Tomat Pedas,Lainnya,19,3.4,0.7,8.7,10829
+Kopi Tinggi Protein,Lainnya,65,6.0,3.4,27.8,36800
+Melon Pilihan,Buah,51,2.7,1.8,17.7,42025
+Tempe Kemasan,Protein,193,10.7,11.1,18.7,44666
+Kedelai Beku,Lainnya,502,15.5,14.0,14.9,74082
+Roti Segar,Lainnya,168,13.7,15.4,21.4,38902
+Daging Sapi Curah,Protein,289,27.1,16.1,3.4,168068
+Kubis Lokal,Lainnya,57,2.9,0.7,5.2,17448
+Mentimun Beku,Lainnya,36,2.8,0.3,10.3,26452
+Teh Hitam,Lainnya,120,2.5,2.8,4.7,38954
+Mete Beku,Lainnya,396,34.6,39.3,47.1,60999
+Bayam Merah,Protein,49,4.4,0.9,4.2,20565
+Nugget Hitam,Lainnya,434,8.7,17.4,47.1,78194
+Pisang Premium,Buah,70,2.6,1.9,12.2,59530
+Kacang Tanah Organik,Lainnya,319,27.3,23.9,16.1,67448
+Ketan Lokal,Lainnya,379,8.5,2.4,77.1,14499
+Kacang Tanah Premium,Lainnya,597,30.9,27.6,30.8,42120
+Tomat Segar,Lainnya,59,2.0,0.2,6.9,29561
+Pepaya Beku,Buah,115,2.3,1.0,14.9,34062
+Kubis Beku,Lainnya,59,4.3,0.7,9.0,18566
+Sosis Hijau,Lainnya,148,15.4,12.4,23.9,63892
+Ikan Tongkol Hijau,Protein,157,16.5,16.7,2.3,49740
+Susu Manis,Lainnya,54,3.8,2.8,26.6,31955
+Pepaya Segar,Buah,67,1.1,1.6,23.4,41811
+Jeruk Asin,Lainnya,54,0.8,0.7,24.9,9588
+Tomat Segar,Lainnya,38,2.2,0.3,10.5,38671
+Nasi Manis,Karbohidrat,348,8.2,2.6,80.4,20496
+Mie Pedas,Lainnya,290,8.1,18.7,26.7,83314
+Mentimun Rendah Lemak,Lainnya,45,5.0,0.4,4.2,20243
+Nasi Kemasan,Karbohidrat,364,8.6,2.1,79.6,12094
+Teh Putih,Lainnya,111,0.8,4.2,24.1,11460
+Pepaya Segar,Buah,34,0.4,0.7,13.5,30957
+Kacang Tanah Pilihan,Lainnya,515,16.7,28.1,17.8,77948
+Sosis Import,Lainnya,345,7.3,27.2,21.2,72758
+Daging Ayam Manis,Protein,155,19.5,3.2,3.7,164018
+Ketan Super,Lainnya,359,8.2,3.0,80.0,12092
+Melon Manis,Buah,118,0.4,0.7,26.4,27432
+Susu Lokal,Lainnya,11,6.3,2.0,28.8,22378
+Jus Tinggi Protein,Lainnya,35,6.7,3.6,16.6,10931
+Almond Merah,Lainnya,498,15.5,15.6,30.2,17441
+Ketan Putih,Lainnya,349,7.5,1.5,77.3,21677
+Jus Hitam,Lainnya,27,0.5,0.5,14.5,11132
+Biskuit Pedas,Lainnya,137,9.0,15.1,23.3,33008
+Kacang Hijau Pilihan,Lainnya,322,30.0,41.6,40.3,31107
+Tahu Rendah Lemak,Protein,167,4.1,5.3,25.9,26141
+Bayam Lokal,Protein,29,2.2,0.9,8.7,26032
+Kacang Hijau Putih,Lainnya,489,17.2,26.3,34.4,30229
+Bayam Super,Protein,57,2.4,0.1,3.1,27932
+Ketan Kemasan,Lainnya,370,7.7,2.1,76.6,21656
+Mentimun Putih,Lainnya,18,4.4,0.3,5.1,37320
+Semangka Hijau,Lainnya,104,1.8,0.6,24.7,52399
+Ikan Lele Manis,Protein,93,19.8,15.0,2.7,112121
+Kangkung Pedas,Sayur,27,2.3,0.8,9.4,29185
+Ikan Bandeng Super,Protein,144,23.3,8.0,0.2,62715
+Wortel Putih,Sayur,45,4.4,0.7,5.3,8904
+Beras Pedas,Karbohidrat,362,7.4,0.2,78.2,14535
+Mentimun Merah,Lainnya,56,4.1,0.8,9.1,36618
+Daging Ayam Curah,Protein,230,28.5,18.3,4.9,163478
+Daging Ayam Asin,Protein,299,23.1,24.2,1.8,121903
+Mentimun Tinggi Protein,Lainnya,40,2.4,0.9,8.0,14876
+Biskuit Curah,Lainnya,244,2.8,6.4,33.9,11190
+Ikan Tongkol Organik,Protein,181,25.5,5.2,1.4,91084
+Wortel Manis,Sayur,15,4.8,0.5,5.3,26340
+Susu Hijau,Lainnya,142,4.4,6.6,13.5,39093
+Apel Putih,Buah,62,2.6,0.5,20.3,49259
+Pisang Premium,Buah,68,2.5,1.9,10.1,28784
+Jus Merah,Lainnya,13,0.7,0.9,15.0,36178
+Nasi Rendah Lemak,Karbohidrat,352,7.3,0.1,79.8,19684
+Daging Kambing Tinggi Protein,Protein,255,25.1,5.1,1.9,51887
+Nasi Hijau,Karbohidrat,363,6.6,2.2,81.4,20508
+Almond Lokal,Lainnya,441,16.7,32.7,26.2,75206
+Kacang Hijau Tinggi Protein,Lainnya,360,25.6,33.1,47.9,82942
+Daging Sapi Super,Protein,233,25.5,6.8,2.6,52556
+Mentimun Pedas,Lainnya,53,1.9,0.5,7.6,14024
+Ikan Lele Asin,Protein,120,15.4,5.5,2.1,68232
+Tomat Organik,Lainnya,26,1.3,0.2,9.6,18376
+Semangka Segar,Lainnya,38,0.6,1.4,11.9,52885
+Mentimun Hitam,Lainnya,45,3.3,0.5,4.4,7105
+Biskuit Hitam,Lainnya,133,6.8,26.3,14.6,44428
+Roti Organik,Lainnya,382,15.8,18.3,34.0,86520
+Ikan Bandeng Hijau,Protein,122,15.5,17.4,0.9,114969
+Ikan Tongkol Pilihan,Protein,236,25.3,4.2,0.9,77532
+Daging Kerbau Manis,Protein,238,27.4,14.4,2.1,154928
+Melon Hitam,Buah,49,2.3,1.3,18.3,18744
+Nasi Asin,Karbohidrat,363,8.9,0.5,79.2,15076
+Kangkung Pedas,Sayur,49,1.8,0.7,5.7,5659
+Daging Ayam Lokal,Protein,254,20.9,20.1,1.9,165043
+Ikan Kembung Tinggi Protein,Protein,221,15.1,14.0,1.4,26989
+Biskuit Kemasan,Lainnya,314,6.8,3.8,35.8,17018
+Daging Ayam Tinggi Protein,Protein,157,27.8,9.4,3.8,111963
+Kangkung Hijau,Sayur,28,1.0,0.6,11.2,9350
+Daging Kerbau Asin,Protein,276,20.1,18.6,3.0,51299
+Daging Kerbau Lokal,Protein,235,29.6,13.7,2.1,84416
+Nasi Hijau,Karbohidrat,342,6.5,0.9,77.0,20079
+Daging Kambing Curah,Protein,175,27.7,9.9,1.5,129322
+Ikan Bandeng Pilihan,Protein,232,22.8,2.5,2.4,85854
+Biskuit Kemasan,Lainnya,345,2.8,23.8,54.9,45769
+Biskuit Tinggi Protein,Lainnya,158,11.1,3.0,42.6,37705
+Sosis Beku,Lainnya,231,12.6,13.7,34.3,55115
+Daging Kambing Premium,Protein,267,23.5,8.7,1.8,122779
+Nasi Super,Karbohidrat,366,8.6,1.5,78.5,13496
+Nasi Import,Karbohidrat,376,6.1,1.6,80.7,14551
+Daging Ayam Hijau,Protein,229,23.5,10.8,4.9,121463
+Ikan Tuna Premium,Protein,171,17.6,17.7,0.0,69590
+Nasi Asin,Karbohidrat,342,7.0,1.5,80.3,14625
+Ketan Pedas,Lainnya,350,7.2,2.7,78.8,12861
+Sawi Organik,Lainnya,50,1.3,0.2,11.9,13119
+Ketan Super,Lainnya,345,8.2,2.8,81.2,15579
+Daging Kerbau Premium,Protein,233,19.4,16.1,0.5,68158
+Daging Sapi Kemasan,Protein,188,23.2,17.7,0.9,54015
+Daging Kerbau Organik,Protein,214,22.0,3.8,0.2,153496
+Roti Premium,Lainnya,261,14.8,25.9,10.3,34705
+Jus Organik,Lainnya,82,7.4,1.7,5.7,24033
+Pepaya Super,Buah,87,2.7,0.4,15.1,22812
+Beras Manis,Karbohidrat,371,6.1,0.4,80.0,16777
+Pepaya Pedas,Buah,82,2.5,1.8,18.6,49704
+Ikan Tongkol Pilihan,Protein,131,16.3,10.2,0.0,58484
+Nugget Kemasan,Lainnya,410,15.7,24.8,53.3,39119
+Almond Premium,Lainnya,366,29.6,30.5,34.0,27324
+Ikan Kembung Segar,Protein,90,17.8,4.3,0.4,100354
+Ikan Bandeng Pedas,Protein,112,26.0,14.1,2.6,117704
+Apel Putih,Buah,61,2.5,0.4,13.8,14398
+Daging Sapi Merah,Protein,144,28.4,7.0,4.9,101270
+Ketan Hijau,Lainnya,372,7.2,1.6,77.1,21938
+Susu Segar,Lainnya,83,7.4,3.1,8.2,19635
+Melon Merah,Buah,85,2.3,0.6,13.9,30230
+Beras Asin,Karbohidrat,359,6.4,2.2,75.9,19857
+Ikan Lele Pilihan,Protein,194,16.5,2.0,2.4,50018
+Ikan Kembung Tinggi Protein,Protein,213,22.6,17.1,1.1,83816
+Daging Kambing Rendah Lemak,Protein,167,29.5,9.6,0.1,59097
+Pepaya Pedas,Buah,107,0.8,0.4,22.1,50870
+Semangka Asin,Lainnya,39,0.4,1.9,14.4,58873
+Ikan Tuna Pedas,Protein,217,27.8,1.3,0.9,62924
+Ikan Bandeng Lokal,Protein,195,22.6,10.6,0.8,78407
+Ketan Rendah Lemak,Lainnya,375,8.7,1.3,75.3,16502
+Kopi Pilihan,Lainnya,68,7.5,0.1,9.9,32728
+Ikan Bandeng Import,Protein,119,15.9,11.9,0.0,51466
+Ikan Tuna Kemasan,Protein,160,22.6,5.8,2.6,48318
+Ikan Tongkol Segar,Protein,195,15.0,10.1,0.7,80366
+Apel Lokal,Buah,94,1.2,0.8,9.7,25185
+Biskuit Curah,Lainnya,336,17.3,26.2,12.5,44951
+Kacang Hijau Merah,Lainnya,593,31.1,31.6,18.5,22281
+Mangga Pilihan,Lainnya,74,2.7,0.7,11.5,35921
+Beras Segar,Karbohidrat,348,6.4,0.0,77.7,19152
+Ikan Tongkol Manis,Protein,193,18.9,2.1,0.6,115343
+Kacang Hijau Tinggi Protein,Lainnya,432,21.0,32.8,35.2,86071
+Almond Manis,Lainnya,481,22.6,37.1,41.0,53768
+Ikan Bandeng Merah,Protein,133,16.3,15.6,0.0,25999
+Roti Super,Lainnya,178,17.3,19.1,15.3,51424
+Tomat Pilihan,Lainnya,23,2.2,0.9,12.0,16969
+Sosis Pilihan,Lainnya,385,18.7,4.6,14.9,12794
+Kacang Hijau Tinggi Protein,Lainnya,309,25.2,34.0,23.2,17933
+Biskuit Segar,Lainnya,426,15.9,5.2,48.4,14555
+Ikan Tongkol Merah,Protein,95,21.3,10.8,1.1,94496
+Pisang Import,Buah,111,0.7,0.3,20.6,51132
+Susu Kemasan,Lainnya,19,2.2,5.0,13.2,24811
+Pisang Rendah Lemak,Buah,56,2.9,0.4,22.9,27208
+Daging Kambing Tinggi Protein,Protein,224,27.8,6.6,4.8,69479
+Ikan Tongkol Merah,Protein,247,18.5,1.2,1.8,76852
+Pisang Manis,Buah,96,0.0,0.0,27.1,26686
+Ikan Bandeng Putih,Protein,140,17.5,9.6,1.3,112371
+Ikan Kembung Rendah Lemak,Protein,183,25.9,3.7,2.7,87681
+Biskuit Premium,Lainnya,288,2.5,19.3,56.9,63960
+Kacang Tanah Manis,Lainnya,584,32.0,42.8,19.2,35784
+Jeruk Organik,Lainnya,118,1.6,1.7,25.2,51539
+Susu Segar,Lainnya,98,1.4,2.8,29.8,11589
+Ikan Kembung Pedas,Protein,91,19.5,11.3,1.0,56052
+Daging Sapi Hitam,Protein,277,27.8,22.3,2.3,156232
+Tahu Import,Protein,371,16.7,9.2,59.0,55787
+Kacang Tanah Putih,Lainnya,544,25.1,35.9,22.5,70244
+Daging Kambing Putih,Protein,171,20.2,5.9,4.3,157877
+Ikan Lele Merah,Protein,155,24.8,14.0,1.0,69580
+Ketan Pedas,Lainnya,356,8.5,1.2,80.6,13674
+Ketan Tinggi Protein,Lainnya,362,7.9,1.7,79.4,21194
+Mangga Rendah Lemak,Lainnya,86,2.4,1.9,13.7,15688
+Sawi Lokal,Lainnya,39,3.5,0.7,7.5,20256
+Ikan Lele Rendah Lemak,Protein,147,25.2,10.1,1.5,47567
+Pepaya Manis,Buah,40,2.3,0.4,11.3,52000
+Jeruk Organik,Lainnya,113,3.0,1.8,12.4,27384
+Ikan Tongkol Pedas,Protein,156,21.8,11.3,1.6,116257
+Ikan Bandeng Merah,Protein,117,26.3,5.1,1.8,110284
+Ketan Beku,Lainnya,352,7.9,2.2,77.2,20655
+Anggur Lokal,Lainnya,104,2.2,0.6,16.9,52583
+Ikan Tuna Lokal,Protein,114,21.3,13.1,0.2,26856
+Almond Pedas,Lainnya,472,17.5,27.7,32.2,32947
+Tahu Pedas,Protein,301,7.0,2.0,48.0,54916
+Kacang Hijau Asin,Lainnya,322,26.8,20.5,25.4,56844
+Semangka Rendah Lemak,Lainnya,111,1.2,1.9,26.6,30864
+Sawi Lokal,Lainnya,24,1.8,0.4,11.9,11700
+Mangga Pedas,Lainnya,37,2.9,0.8,21.2,20658
+Daging Ayam Hitam,Protein,250,18.5,10.8,4.8,72712
+Susu Lokal,Lainnya,67,5.9,4.9,21.3,24388
+Ikan Kembung Beku,Protein,92,16.0,14.6,0.2,54650
+Kopi Beku,Lainnya,46,4.7,7.9,20.1,32615
+Mentimun Super,Lainnya,19,1.5,0.2,6.2,38311
+Nasi Tinggi Protein,Karbohidrat,369,6.8,2.3,81.3,15578
+Pisang Tinggi Protein,Buah,34,0.1,1.9,11.0,23137
+Nugget Kemasan,Lainnya,385,18.3,17.2,47.6,16872
+Ikan Kembung Super,Protein,150,21.4,12.2,1.4,80200
+Biskuit Lokal,Lainnya,276,5.2,3.3,25.7,61144
+Kedelai Manis,Lainnya,587,21.2,37.5,35.5,61946
+Ikan Tongkol Hijau,Protein,108,19.7,10.5,0.0,88260
+Nasi Pedas,Karbohidrat,375,7.8,2.7,78.3,14663
+Daging Sapi Hitam,Protein,213,26.8,9.0,3.3,62395
+Ikan Lele Asin,Protein,232,22.4,9.0,1.1,103108
+Nugget Segar,Lainnya,102,2.3,15.2,36.8,16012
+Ikan Lele Pedas,Protein,143,18.4,16.8,0.9,94240
+Tempe Putih,Protein,294,11.1,27.9,59.5,46152
+Kacang Hijau Manis,Lainnya,424,19.0,39.7,40.8,78404
+Jus Organik,Lainnya,63,2.9,7.4,28.6,31249
+Kopi Rendah Lemak,Lainnya,131,1.8,0.9,8.0,39267
+Ketan Segar,Lainnya,362,6.9,0.6,78.7,19934
+Kedelai Tinggi Protein,Lainnya,600,15.5,12.3,10.9,83936
+Ketan Pedas,Lainnya,345,8.3,0.2,80.7,15822
+Tahu Hijau,Protein,145,6.3,9.4,12.8,30987
+Tempe Import,Protein,367,10.3,13.1,52.4,22468
+Kedelai Import,Lainnya,489,27.7,20.6,43.7,67803
+Jus Putih,Lainnya,97,1.8,5.1,13.3,30227
+Semangka Tinggi Protein,Lainnya,111,2.2,1.6,22.5,52175
+Mie Organik,Lainnya,332,9.5,6.6,21.0,71755
+Nasi Hijau,Karbohidrat,349,7.7,3.0,81.2,15365
+Daging Kerbau Hitam,Protein,220,24.5,24.0,1.9,113801
+Nasi Lokal,Karbohidrat,357,7.4,1.7,81.9,13760
+Kacang Tanah Asin,Lainnya,480,25.6,24.2,37.9,57314
+Tomat Tinggi Protein,Lainnya,39,3.9,0.2,9.2,34901
+Ketan Beku,Lainnya,345,7.1,1.3,81.6,19102
+Ikan Bandeng Merah,Protein,136,21.1,5.3,0.8,42458
+Daging Kambing Hitam,Protein,234,23.2,17.1,3.5,153201
+Nugget Pilihan,Lainnya,168,2.3,27.3,48.0,42645
+Susu Pilihan,Lainnya,133,2.4,3.8,3.1,16839
+Melon Asin,Buah,30,0.1,0.7,19.9,48354
+Jeruk Asin,Lainnya,97,2.1,1.0,20.3,54541
+Ketan Segar,Lainnya,355,7.3,2.4,81.4,13325
+Mete Manis,Lainnya,448,32.7,41.1,33.3,23489
+Daging Kerbau Kemasan,Protein,264,23.6,15.0,4.6,94890
+Biskuit Hijau,Lainnya,276,6.8,12.3,34.4,25117
+Daging Sapi Hijau,Protein,153,26.6,22.2,4.8,50129
+Mentimun Merah,Lainnya,36,1.6,0.7,5.7,10772
+Nasi Putih,Karbohidrat,355,7.4,0.6,81.6,14543
+Ikan Tongkol Segar,Protein,192,20.9,5.6,2.1,113427
+Bayam Organik,Protein,25,4.4,0.8,3.4,28789
+Susu Curah,Lainnya,122,1.5,7.5,29.6,8447
+Ikan Tongkol Pilihan,Protein,204,27.2,9.5,0.6,84002
+Beras Putih,Karbohidrat,343,8.4,0.3,78.5,13117
+Teh Lokal,Lainnya,15,7.8,7.4,11.8,9817
+Pepaya Curah,Buah,44,2.2,0.3,27.0,31505
+Kacang Tanah Import,Lainnya,378,34.2,17.3,13.5,41733
+Nasi Manis,Karbohidrat,348,6.5,0.6,77.2,20933
+Ikan Tongkol Premium,Protein,206,15.3,12.1,0.4,49917
+Mie Curah,Lainnya,302,7.7,13.5,30.3,84800
+Mete Rendah Lemak,Lainnya,391,19.9,22.4,31.9,78651
+Susu Pilihan,Lainnya,11,4.6,0.5,17.6,39984
+Beras Import,Karbohidrat,354,6.2,2.3,76.6,21714
+Jeruk Merah,Lainnya,49,0.1,1.2,9.3,37301
+Bayam Organik,Protein,23,2.0,0.9,8.3,39093
+Jus Beku,Lainnya,79,7.8,3.9,15.6,28191
+Jus Putih,Lainnya,135,3.1,0.8,7.2,19612
+Sosis Asin,Lainnya,431,5.3,10.4,55.9,63542
+Teh Organik,Lainnya,137,2.6,3.5,10.7,6771
+Tomat Kemasan,Lainnya,34,3.4,0.3,9.3,14721
+Daging Kambing Curah,Protein,225,29.0,5.5,3.4,163804
+Kubis Tinggi Protein,Lainnya,26,4.5,0.8,10.9,15545
+Beras Merah,Karbohidrat,344,8.3,2.1,79.5,17995
+Mete Super,Lainnya,529,20.8,11.0,48.8,61180
+Daging Kambing Super,Protein,247,23.1,16.5,3.9,173359
+Daging Sapi Hitam,Protein,265,20.7,12.3,0.7,171040
+Ikan Kembung Kemasan,Protein,191,17.0,16.0,1.4,75809
+Ikan Tuna Organik,Protein,163,22.3,13.0,1.8,69693
+Jus Hijau,Lainnya,78,3.3,0.2,10.0,8492
+Melon Rendah Lemak,Buah,34,0.8,0.1,29.2,39721
+Anggur Premium,Lainnya,58,2.4,0.9,20.2,15744
+Beras Tinggi Protein,Karbohidrat,346,7.9,0.5,79.5,16469
+Daging Ayam Organik,Protein,141,18.9,15.2,2.0,118468
+Mete Segar,Lainnya,467,20.3,32.1,17.6,81479
+Mentimun Import,Lainnya,19,4.1,0.9,9.1,31759
+Daging Kambing Kemasan,Protein,246,24.3,18.3,1.8,68192
+Almond Pilihan,Lainnya,302,33.2,13.8,47.0,24759
+Jus Manis,Lainnya,23,0.3,2.5,8.0,12644
+Daging Kerbau Super,Protein,275,23.8,18.8,3.7,147539
+Tomat Pedas,Lainnya,45,2.5,0.6,6.3,6035
+Mete Merah,Lainnya,455,15.0,32.9,24.7,74528
+Teh Curah,Lainnya,94,2.2,4.0,21.9,12999
+Daging Kambing Pilihan,Protein,195,27.9,17.1,2.6,146655
+Susu Asin,Lainnya,86,6.0,4.4,3.1,36576
+Mangga Hitam,Lainnya,101,2.6,0.7,15.1,32170
+Jus Organik,Lainnya,72,6.7,7.3,4.0,26143
+Daging Kerbau Curah,Protein,253,29.3,12.2,3.0,78236
+Sawi Organik,Lainnya,51,3.6,0.3,11.6,9156
+Kedelai Manis,Lainnya,388,24.5,41.7,25.3,46785
+Ikan Tuna Organik,Protein,189,27.1,3.4,0.2,31911
+Jus Tinggi Protein,Lainnya,30,7.4,7.7,7.4,19472
+Ketan Merah,Lainnya,356,6.7,2.7,80.3,13350
+Kubis Manis,Lainnya,28,3.3,0.2,4.9,25973
+Mete Beku,Lainnya,385,17.7,24.7,21.4,85932
+Anggur Putih,Lainnya,37,1.6,2.0,14.3,19229
+Kubis Import,Lainnya,21,3.6,0.3,8.4,21119
+Teh Premium,Lainnya,89,6.6,3.5,26.7,25415
+Ketan Organik,Lainnya,363,6.1,1.6,80.4,15747
+Kacang Hijau Curah,Lainnya,506,29.1,19.8,10.8,89739
+Ikan Kembung Putih,Protein,173,19.4,1.8,0.4,114702
+Mentimun Manis,Lainnya,60,3.8,0.7,10.3,6543
+Ikan Lele Rendah Lemak,Protein,214,18.4,7.2,0.6,101493
+Tahu Pedas,Protein,236,11.6,4.1,22.7,75272
+Daging Kerbau Manis,Protein,286,25.9,6.4,4.4,147618
+Nasi Asin,Karbohidrat,359,6.1,0.9,75.9,15347
+Nugget Super,Lainnya,437,15.2,10.7,44.7,34230
+Kopi Hijau,Lainnya,103,2.0,4.2,14.1,36474
+Melon Segar,Buah,116,1.6,0.5,16.5,30511
+Tahu Hijau,Protein,154,12.3,24.9,13.0,22662
+Semangka Pedas,Lainnya,36,0.1,0.5,26.3,46546
+Daging Ayam Putih,Protein,163,19.3,13.7,4.9,94798
+Kangkung Merah,Sayur,60,3.1,0.4,11.0,12779
+Kacang Tanah Pedas,Lainnya,577,34.6,16.1,44.1,67745
+Tomat Super,Lainnya,44,3.8,0.7,9.6,8879
+Jus Pedas,Lainnya,43,3.3,4.9,3.6,16206
+Daging Kerbau Pedas,Protein,269,25.9,6.1,1.7,67318
+Daging Kerbau Organik,Protein,135,27.9,11.3,4.5,94434
+Daging Kerbau Super,Protein,124,29.7,5.1,3.0,175819
+Susu Merah,Lainnya,17,2.6,0.1,26.4,14718
+Wortel Kemasan,Sayur,50,1.9,0.3,10.0,21789
+Pisang Organik,Buah,57,0.9,1.1,19.2,17634
+Daging Sapi Manis,Protein,265,22.8,18.2,2.6,112610
+Susu Super,Lainnya,75,3.1,0.2,24.9,28206
+Ikan Tongkol Merah,Protein,120,25.2,4.9,1.4,50515
+Mentimun Import,Lainnya,15,4.4,0.6,11.8,17174
+Ikan Tongkol Beku,Protein,148,20.7,1.7,2.7,87197
+Tomat Premium,Lainnya,29,3.3,0.1,3.3,6755
+Nasi Organik,Karbohidrat,358,6.7,1.9,77.7,12450
+Pepaya Super,Buah,54,2.2,1.3,19.2,27752
+Ketan Asin,Lainnya,349,7.7,0.8,81.5,14706
+Jeruk Asin,Lainnya,120,1.7,0.9,23.3,17746
+Brokoli Hijau,Sayur,60,4.2,0.9,9.3,9604
+Pepaya Pedas,Buah,38,3.0,1.3,29.2,33590
+Kangkung Beku,Sayur,29,5.0,0.5,5.6,20151
+Beras Hijau,Karbohidrat,346,6.5,2.4,77.3,20076
+Jeruk Putih,Lainnya,71,0.3,0.8,28.6,58397
+Wortel Putih,Sayur,20,4.1,0.3,4.4,27580
+Ketan Super,Lainnya,349,7.2,1.7,75.4,21595
+Kedelai Hijau,Lainnya,426,34.0,24.5,36.3,81305
+Kopi Super,Lainnya,101,2.2,1.3,22.5,23957
+Susu Hitam,Lainnya,146,1.5,4.7,3.9,20905
+Mete Import,Lainnya,417,27.7,34.1,37.1,69790
+Tomat Manis,Lainnya,50,4.6,0.4,10.2,25365
+Sosis Beku,Lainnya,286,11.8,8.3,49.4,55293
+Teh Rendah Lemak,Lainnya,137,3.4,0.2,5.2,17864
+Daging Kambing Curah,Protein,210,23.3,7.7,1.6,88948
+Mentimun Asin,Lainnya,40,4.3,0.1,6.5,11763
+Daging Kambing Segar,Protein,296,21.1,16.7,0.1,124472
+Ketan Kemasan,Lainnya,349,6.1,1.5,79.0,17477
+Kacang Tanah Organik,Lainnya,404,18.2,38.5,36.8,26771
+Teh Merah,Lainnya,49,4.6,3.8,15.0,23589
+Kubis Hitam,Lainnya,19,3.5,0.2,6.3,20483
+Mie Organik,Lainnya,102,8.5,11.8,57.9,11335
+Kangkung Premium,Sayur,57,2.4,0.6,4.9,34158
+Daging Kambing Putih,Protein,169,22.5,19.4,0.9,139126
+Semangka Manis,Lainnya,33,1.0,1.5,8.6,12505
+Mie Super,Lainnya,126,14.4,16.7,17.2,19708
+Tempe Premium,Protein,255,12.8,5.1,47.7,39268
+Nasi Kemasan,Karbohidrat,368,8.4,1.4,76.6,14115
+Ikan Tuna Putih,Protein,148,16.6,17.2,0.8,113391
+Ikan Tuna Import,Protein,108,27.4,14.1,0.4,98332
+Wortel Pedas,Sayur,56,4.0,0.7,5.6,8826
+Kacang Hijau Pilihan,Lainnya,412,22.1,19.1,31.4,32178
+Tahu Manis,Protein,375,11.8,24.3,47.5,67036
+Daging Ayam Kemasan,Protein,188,26.9,6.0,0.6,129236
+Ketan Segar,Lainnya,347,7.8,1.7,76.8,17094
+Kacang Tanah Kemasan,Lainnya,415,15.3,33.2,16.9,62377
+Almond Premium,Lainnya,598,33.1,27.4,17.4,45759
+Daging Sapi Premium,Protein,191,29.0,14.1,1.9,132439
+Kubis Asin,Lainnya,42,1.1,0.0,5.4,29347
+Wortel Hitam,Sayur,58,3.0,1.0,3.5,21282
+Ketan Hijau,Lainnya,376,7.8,0.7,76.5,17117
+Apel Pedas,Buah,83,2.0,0.5,25.2,40834
+Mangga Kemasan,Lainnya,105,0.7,1.7,24.9,9904
+Roti Curah,Lainnya,313,3.3,15.3,38.1,37865
+Beras Pilihan,Karbohidrat,364,6.4,2.9,76.0,17726
+Tahu Putih,Protein,138,15.0,21.5,40.5,45317
+Nasi Beku,Karbohidrat,341,6.3,1.2,78.1,12411
+Daging Kerbau Tinggi Protein,Protein,201,21.8,19.6,3.4,172963
+Tahu Lokal,Protein,133,8.5,17.2,19.6,26787
+Pisang Tinggi Protein,Buah,118,2.9,1.3,12.3,55937
+Daging Kerbau Pilihan,Protein,292,18.6,11.3,4.1,138737
+Semangka Asin,Lainnya,66,2.7,1.8,23.0,8027
+Kedelai Curah,Lainnya,454,31.6,33.6,48.1,80836
+Anggur Beku,Lainnya,79,2.2,1.7,23.9,56079
+Ikan Lele Rendah Lemak,Protein,230,26.6,17.7,1.1,75408
+Mete Rendah Lemak,Lainnya,480,26.3,21.4,42.3,23165
+Kacang Hijau Pedas,Lainnya,370,23.0,26.4,22.3,57155
+Almond Pedas,Lainnya,527,21.1,35.9,34.2,60626
+Tempe Pilihan,Protein,380,11.0,8.8,41.6,93634
+Brokoli Rendah Lemak,Sayur,47,1.6,0.9,11.4,30085
+Daging Kerbau Hitam,Protein,263,18.9,8.2,1.0,53967
+Ketan Putih,Lainnya,356,9.0,0.3,79.2,19432
+Kedelai Segar,Lainnya,340,23.9,24.9,18.5,26385
+Melon Putih,Buah,68,0.2,1.4,26.1,40324
+Susu Hijau,Lainnya,61,2.4,5.4,7.1,23272
+Anggur Lokal,Lainnya,39,2.5,0.4,18.7,49867
+Nugget Import,Lainnya,150,6.6,29.4,10.2,52422
+Kacang Tanah Beku,Lainnya,477,25.0,18.0,37.8,15663
+Ikan Tuna Organik,Protein,164,21.5,12.6,2.9,88974
+Ikan Kembung Kemasan,Protein,168,24.9,12.6,2.4,65746
+Ikan Tuna Beku,Protein,187,15.2,14.8,1.6,25103
+Apel Import,Buah,78,0.6,1.6,23.7,51654
+Pepaya Hitam,Buah,42,1.7,1.1,16.7,12558
+Kopi Curah,Lainnya,57,1.1,2.2,26.1,35813
+Ketan Hijau,Lainnya,359,6.2,2.0,77.2,18392
+Wortel Segar,Sayur,16,4.6,0.1,5.8,12545
