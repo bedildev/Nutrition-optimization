@@ -4,10 +4,5 @@
       "source": "/v1/optimizes",
       "destination": "https://feryardnsyah-nutri-optimize.hf.space/optimizes"
     }
-  ],
-  "frontend": {
-    "root": "frontend",
-    "routePrefix": "/",
-    "framework": "vite"
-  }
+  ]
 }
