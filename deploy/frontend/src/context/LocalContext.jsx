@@ -5,7 +5,9 @@ import { supabase, hasSupabase } from '../lib/supabaseClient';
 const LocalContext = createContext(null);
 
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
-const useBackendStorage = import.meta.env.VITE_USE_BACKEND === 'true';
+// useBackendStorage aktif hanya jika VITE_USE_BACKEND=true DAN apiBaseUrl tersedia
+const useBackendStorage = import.meta.env.VITE_USE_BACKEND === 'true' && Boolean(apiBaseUrl);
+// useSupabaseDirect aktif jika Supabase tersedia dan tidak pakai backend
 const useSupabaseDirect = hasSupabase && !useBackendStorage;
 
 const initialUsers = [
