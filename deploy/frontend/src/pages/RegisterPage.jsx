@@ -30,11 +30,10 @@ function RegisterPage() {
     setIsSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-      register({ name, email, password });
+      await register({ name, email, password });
       navigate('/login');
     } catch (error) {
-      setErrorMessage(error.message);
+      setErrorMessage(error.message || 'Registrasi gagal. Coba lagi.');
     } finally {
       setIsSubmitting(false);
     }
