@@ -7,6 +7,8 @@ const schema = Joi.object({
 });
 
 module.exports = async (req, res) => {
+  console.log("[OPTIMIZE] FASTAPI_BASE_URL:", process.env.FASTAPI_BASE_URL);
+  
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     return res.status(405).json({
@@ -32,11 +34,17 @@ module.exports = async (req, res) => {
   }
 
   const baseUrl = process.env.FASTAPI_BASE_URL || "http://localhost:8000";
+  const fastapiUrl = baseUrl.endsWith('/') 
+    ? `${baseUrl}optimizes` 
+    : `${baseUrl}/optimizes`;
+  
+  console.log("[OPTIMIZE] Calling FastAPI:", fastapiUrl);
 
   try {
-    const response = await axios.post(`${baseUrl}/optimizes`, value, {
-      timeout: 15000
+    const response = await axios.post(fastapiUrl, value, {
+      timeout: 60000
     });
+    console.log("[OPTIMIZE] FastAPI response:", response.data);
     const payload = response.data || {};
 
     return res.status(200).json({
@@ -52,8 +60,10 @@ module.exports = async (req, res) => {
       }
     });
   } catch (err) {
+    console.error("[OPTIMIZE] Error:", err.message);
     if (err.response) {
-      return res.status(err.response.status || 500).json({
+      console.error("[OPTIMIZE] FastAPI error:", err.response.data);
+      return res.status(err.response.status).json({
         status: "fail",
         message: "FastAPI error",
         data: {
@@ -62,11 +72,12 @@ module.exports = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
+    return res.status(502).json({
       status: "fail",
-      message: "Failed to reach FastAPI service",
+      message: "FastAPI unreachable",
       data: {
-        details: err.message
+        base_url: fastapiUrl,
+        error: err.message
       }
     });
   }
