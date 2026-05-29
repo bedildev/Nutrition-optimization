@@ -133,22 +133,34 @@ function LocalProvider({ children }) {
     }
 
     if (useSupabaseDirect) {
-      const { data: existing, error: findError } = await supabase.from('users').select('email').eq('email', normalizedEmail).maybeSingle();
-      if (findError) {
-        throw new Error(findError.message);
+      // Gunakan supabase.auth.signUp agar konsisten dengan login (signInWithPassword)
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: normalizedEmail,
+        password,
+        options: {
+          data: { name, bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.' },
+        },
+      });
+      if (signUpError) {
+        throw new Error(signUpError.message);
       }
-      if (existing) {
-        throw new Error('Email sudah terdaftar.');
-      }
-
-      const { error: insertError } = await supabase.from('users').insert([{ name, email: normalizedEmail, password, bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.' }]);
-      if (insertError) {
-        throw new Error(insertError.message);
-      }
-
-      const { error: profileError } = await supabase.from('profiles').upsert([{ email: normalizedEmail, goal: 'Jaga Kesehatan', budget: 15000, age: 18, weight: 60, height: 160, activity: 'Sedang' }]);
-      if (profileError) {
-        throw new Error(profileError.message);
+      if (data?.user) {
+        // Simpan profile ke tabel profiles
+        const { error: profileError } = await supabase.from('profiles').upsert([{
+          user_id: data.user.id,
+          email: normalizedEmail,
+          name,
+          bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.',
+          goal: 'Jaga Kesehatan',
+          budget: 15000,
+          age: 18,
+          weight: 60,
+          height: 160,
+          activity: 'Sedang',
+        }]);
+        if (profileError) {
+          console.warn('[register] Profile upsert warning:', profileError.message);
+        }
       }
       return;
     }
