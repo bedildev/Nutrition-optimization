@@ -7,12 +7,15 @@ const { optimizeSchema } = require("../validators/optimize");
 const router = express.Router();
 
 const FASTAPI_BASE_URL = process.env.FASTAPI_BASE_URL || "http://localhost:8000";
+console.log("[OPTIMIZE] FASTAPI_BASE_URL:", FASTAPI_BASE_URL);
 
 router.post("/optimizes", validate(optimizeSchema), async (req, res, next) => {
   try {
+    console.log("[OPTIMIZE] Calling FastAPI:", `${FASTAPI_BASE_URL}/optimizes`);
     const response = await axios.post(`${FASTAPI_BASE_URL}/optimizes`, req.body, {
       timeout: 60000
     });
+    console.log("[OPTIMIZE] FastAPI response:", response.data);
     const fastapiData = response.data || {};
 
     return res.json({
@@ -28,7 +31,9 @@ router.post("/optimizes", validate(optimizeSchema), async (req, res, next) => {
       }
     });
   } catch (error) {
+    console.error("[OPTIMIZE] Error:", error.message);
     if (error.response) {
+      console.error("[OPTIMIZE] FastAPI error response:", error.response.data);
       return res.status(error.response.status).json({
         status: "fail",
         message: "FastAPI error",
@@ -39,18 +44,20 @@ router.post("/optimizes", validate(optimizeSchema), async (req, res, next) => {
     }
 
     if (error.request || error.code) {
+      console.error("[OPTIMIZE] FastAPI unreachable - base_url:", FASTAPI_BASE_URL);
       return res.status(502).json({
         status: "fail",
-        message: "FastAPI unreachable",
-        data: {
-          base_url: FASTAPI_BASE_URL,
-          code: error.code || null
-        }
-      });
-    }
+         message: "FastAPI unreachable",
+         data: {
+           base_url: FASTAPI_BASE_URL,
+           code: error.code || null
+         }
+       });
+     }
 
-    return next(error);
-  }
+     console.error("[OPTIMIZE] Unexpected error:", error.message);
+     return next(error);
+   }
 });
 
 module.exports = router;
