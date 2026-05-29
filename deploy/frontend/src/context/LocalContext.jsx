@@ -73,16 +73,16 @@ async function apiRequest(path, options = {}) {
   return payload;
 }
 
-async function fetchSupabaseProfile(email) {
-  const { data, error } = await supabase.from('profiles').select('*').eq('email', email).maybeSingle();
+async function fetchSupabaseProfile(userId) {
+  const { data, error } = await supabase.from('profiles').select('*').eq('user_id', userId).maybeSingle();
   if (error) {
     throw new Error(error.message);
   }
   return data;
 }
 
-async function fetchSupabaseSavedMenuIds(email) {
-  const { data, error } = await supabase.from('saved_menus').select('menu_id').eq('email', email);
+async function fetchSupabaseSavedMenuIds(userId) {
+  const { data, error } = await supabase.from('saved_menus').select('menu_id').eq('user_id', userId);
   if (error) {
     throw new Error(error.message);
   }
@@ -198,20 +198,25 @@ function LocalProvider({ children }) {
     }
 
     if (useSupabaseDirect) {
-      const { data: user, error } = await supabase.from('users').select('*').eq('email', normalizedEmail).maybeSingle();
-      if (error) {
-        throw new Error(error.message);
-      }
-      if (!user || user.password !== password) {
+      const { data: authData, error: signInError } = await supabase.auth.signInWithPassword({
+        email: normalizedEmail,
+        password,
+      });
+      if (signInError) {
         throw new Error('Email atau password tidak sesuai.');
       }
 
-      const profileData = await fetchSupabaseProfile(normalizedEmail);
-      const savedMenuIdsData = await fetchSupabaseSavedMenuIds(normalizedEmail);
-      const nextAuthUser = { name: user.name, email: user.email, bio: user.bio };
+      const authUser = authData?.user;
+      const userId = authUser?.id;
+      const userName = authUser?.user_metadata?.name || normalizedEmail.split('@')[0];
+      const userBio = authUser?.user_metadata?.bio || '';
+
+      const profileData = await fetchSupabaseProfile(userId);
+      const savedMenuIdsData = await fetchSupabaseSavedMenuIds(userId);
+      const nextAuthUser = { name: userName, email: normalizedEmail, bio: userBio };
 
       setAuthUser(nextAuthUser);
-      setProfile({ ...initialProfile, ...profileData, name: user.name, bio: user.bio });
+      setProfile({ ...initialProfile, ...profileData, name: userName, bio: userBio });
       setSavedMenuIds(savedMenuIdsData);
       return;
     }
