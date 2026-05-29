@@ -4,9 +4,11 @@ import { supabase, hasSupabase } from '../lib/supabaseClient';
 
 const LocalContext = createContext(null);
 
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
-// useBackendStorage aktif hanya jika VITE_USE_BACKEND=true DAN apiBaseUrl tersedia
-const useBackendStorage = import.meta.env.VITE_USE_BACKEND === 'true' && Boolean(apiBaseUrl);
+// Strip localhost URL agar production gunakan relative path
+const _rawUrl = import.meta.env.VITE_API_BASE_URL || '';
+const apiBaseUrl = _rawUrl.startsWith('http://localhost') || _rawUrl.startsWith('https://localhost') ? '' : _rawUrl.replace(/\/$/, '');
+// useBackendStorage aktif jika VITE_USE_BACKEND=true (relative URL juga didukung)
+const useBackendStorage = import.meta.env.VITE_USE_BACKEND === 'true';
 // useSupabaseDirect aktif jika Supabase tersedia dan tidak pakai backend
 const useSupabaseDirect = hasSupabase && !useBackendStorage;
 
@@ -52,10 +54,7 @@ function readStorage(key, fallback) {
 }
 
 async function apiRequest(path, options = {}) {
-  if (!apiBaseUrl) {
-    throw new Error('VITE_API_BASE_URL belum dikonfigurasi.');
-  }
-
+  // apiBaseUrl kosong = gunakan relative URL (same-domain Vercel deployment)
   const response = await fetch(`${apiBaseUrl}${path}`, {
     method: options.method || 'GET',
     headers: {
