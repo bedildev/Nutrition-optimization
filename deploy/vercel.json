@@ -8,7 +8,7 @@
   },
   "rewrites": [
     {
-      "source": "/api/optimizes",
+      "source": "/v1/optimizes",
       "destination": "https://feryardnsyah-nutri-optimize.hf.space/optimizes"
     }
   ]
