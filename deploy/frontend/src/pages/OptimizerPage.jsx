@@ -65,7 +65,7 @@ function OptimizerPage() {
   }
 
   async function fetchAiSummary(nextResult) {
-    const response = await fetch(`${apiBaseUrl}/api/optimizes`, {
+    const response = await fetch('/v1/optimizes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
