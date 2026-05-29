@@ -2,7 +2,7 @@ import os
 import tensorflow as tf
 import numpy as np
 import joblib
-import google.generativeai as genai
+import requests
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
@@ -108,11 +108,23 @@ def optimize_menu(request: OptimizationRequest):
         final_score_array = y_scaler.inverse_transform(pred_scaled)
         skor_prediksi = float(final_score_array[0][0])
         
-        # E. Minta Saran dari Gemini
+        # E. Minta Saran dari Gemini (REST API langsung)
         try:
-            gen_model = genai.GenerativeModel('gemini-2.5-flash')
-            prompt = f"Seorang pengguna dengan budget Rp{request.budget_maksimal} dan target {request.target_kalori} kalori mendapat skor efisiensi nutrisi {skor_prediksi:.2f}. Berikan 2 kalimat saran singkat jenis makanan lokal Indonesia yang sebaiknya dibeli."
-            saran_gemini = gen_model.generate_content(prompt).text
+            GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+            if not GEMINI_API_KEY:
+                saran_gemini = "GEMINI_API_KEY belum dikonfigurasi."
+            else:
+                prompt = f"Seorang pengguna dengan budget Rp{request.budget_maksimal} dan target {request.target_kalori} kalori mendapat skor efisiensi nutrisi {skor_prediksi:.2f}. Berikan 2 kalimat saran singkat jenis makanan lokal Indonesia yang sebaiknya dibeli."
+                
+                url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+                payload = {
+                    "contents": [{"parts": [{"text": prompt}]}]
+                }
+                headers = {"Content-Type": "application/json"}
+                
+                response = requests.post(url, json=payload, headers=headers, timeout=30)
+                response_data = response.json()
+                saran_gemini = response_data['candidates'][0]['content']['parts'][0]['text']
         except Exception as e:
             saran_gemini = f"Gagal memuat saran AI: {e}"
         
