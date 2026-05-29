@@ -15,7 +15,8 @@ const activityFactors = {
 
 function OptimizerPage() {
   const { lunchMenus, profile, optimizerResult, saveOptimizerResult, updateProfile } = useLocal();
-  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
+  const _raw = import.meta.env.VITE_API_BASE_URL || '';
+  const apiBaseUrl = _raw.startsWith('http://localhost') || _raw.startsWith('https://localhost') ? '' : _raw.replace(/\/$/, '');
   const [age, onAgeChange] = useInput(String(profile.age));
   const [weight, onWeightChange] = useInput(String(profile.weight));
   const [height, onHeightChange] = useInput(String(profile.height));

@@ -213,7 +213,7 @@ function LocalProvider({ children }) {
 
       const profileData = await fetchSupabaseProfile(userId);
       const savedMenuIdsData = await fetchSupabaseSavedMenuIds(userId);
-      const nextAuthUser = { name: userName, email: normalizedEmail, bio: userBio };
+      const nextAuthUser = { id: userId, name: userName, email: normalizedEmail, bio: userBio };
 
       setAuthUser(nextAuthUser);
       setProfile({ ...initialProfile, ...profileData, name: userName, bio: userBio });
@@ -257,8 +257,8 @@ function LocalProvider({ children }) {
       return;
     }
 
-    if (useSupabaseDirect && authUser?.email) {
-      const { error } = await supabase.from('profiles').upsert([{ ...updatedProfile, email: authUser.email }]);
+    if (useSupabaseDirect && authUser?.id) {
+      const { error } = await supabase.from('profiles').upsert([{ ...updatedProfile, user_id: authUser.id, email: authUser.email }]);
       if (error) {
         throw new Error(error.message);
       }
@@ -286,10 +286,10 @@ function LocalProvider({ children }) {
       return;
     }
 
-    if (useSupabaseDirect && authUser?.email) {
-      const { error } = await supabase.from('optimizer_results').insert([{ email: authUser.email, result, created_at: new Date().toISOString() }]);
+    if (useSupabaseDirect && authUser?.id) {
+      const { error } = await supabase.from('optimizer_results').insert([{ user_id: authUser.id, result, created_at: new Date().toISOString() }]);
       if (error) {
-        throw new Error(error.message);
+        console.warn('[saveOptimizerResult]', error.message);
       }
     }
   }
@@ -313,16 +313,16 @@ function LocalProvider({ children }) {
         });
       }
 
-      if (useSupabaseDirect && authUser?.email) {
+      if (useSupabaseDirect && authUser?.id) {
         (async () => {
-          const { data: existing, error: existingError } = await supabase.from('saved_menus').select('*').eq('email', authUser.email).eq('menu_id', menuId).maybeSingle();
+          const { data: existing, error: existingError } = await supabase.from('saved_menus').select('*').eq('user_id', authUser.id).eq('menu_id', menuId).maybeSingle();
           if (existingError) {
             return;
           }
           if (existing) {
-            await supabase.from('saved_menus').delete().eq('email', authUser.email).eq('menu_id', menuId);
+            await supabase.from('saved_menus').delete().eq('user_id', authUser.id).eq('menu_id', menuId);
           } else {
-            await supabase.from('saved_menus').insert([{ email: authUser.email, menu_id: menuId }]);
+            await supabase.from('saved_menus').insert([{ user_id: authUser.id, menu_id: menuId }]);
           }
         })();
       }
