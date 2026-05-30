@@ -72,9 +72,7 @@ except Exception as e:
 # --- 3. KONFIGURASI GEMINI AI ---
 # Jika deploy di Hugging Face, atur SECRET environment variable GEMINI_API_KEY
 API_KEY_GEMINI = os.getenv("GEMINI_API_KEY", "")
-if API_KEY_GEMINI:
-    genai.configure(api_key=API_KEY_GEMINI)
-else:
+if not API_KEY_GEMINI:
     print("⚠️ GEMINI_API_KEY belum diatur. Saran AI Gemini akan dinonaktifkan.")
 
 
