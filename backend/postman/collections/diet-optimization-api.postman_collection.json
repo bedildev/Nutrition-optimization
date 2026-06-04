@@ -20,6 +20,9 @@
               "const json = pm.response.json();",
               "pm.test(\"Response status is success\", function () {",
               "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Response message is valid\", function () {",
+              "  pm.expect(json.message).to.include(\"Nutrition Optimization API\");",
               "});"
             ]
           }
@@ -28,17 +31,294 @@
       "request": {
         "method": "GET",
         "header": [],
-        "url": {
-          "raw": "http://localhost:{{port}}/",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "{{port}}",
-          "path": [
-            ""
-          ]
+        "url": "{{baseurl}}/"
+      },
+      "response": []
+    },
+    {
+      "name": "Auth / Register",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const unique = Date.now();",
+              "pm.environment.set(\"demoRegisterEmail\", `nutriai.dev${unique}@outlook.com`);"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Returned user email\", function () {",
+              "  pm.expect(json.data.user.email).to.eql(pm.environment.get(\"demoRegisterEmail\"));",
+              "});"
+            ]
+          }
         }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Demo New User\",\r\n  \"email\": \"{{demoRegisterEmail}}\",\r\n  \"password\": \"{{demoPassword}}\"\r\n}"
+        },
+        "url": "{{baseurl}}/v1/auth/register"
+      },
+      "response": []
+    },
+    {
+      "name": "Auth / Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Response contains user data\", function () {",
+              "  pm.expect(json.data.user).to.have.property(\"email\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{demoRegisterEmail}}\",\r\n  \"password\": \"{{demoPassword}}\"\r\n}"
+        },
+        "url": "{{baseurl}}/v1/auth/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Auth / Get Profile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Profile has email\", function () {",
+              "  pm.expect(json.data.profile.email).to.eql(pm.environment.get(\"demoRegisterEmail\"));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseurl}}/v1/auth/profile?email={{demoRegisterEmail}}"
+      },
+      "response": []
+    },
+    {
+      "name": "Auth / Update Profile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Profile updated\", function () {",
+              "  pm.expect(json.data.profile).to.have.property(\"email\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{demoRegisterEmail}}\",\r\n  \"name\": \"Demo User\",\r\n  \"bio\": \"Profil diperbarui lewat API\",\r\n  \"goal\": \"Jaga Kesehatan\",\r\n  \"budget\": 15000,\r\n  \"age\": 25,\r\n  \"weight\": 65,\r\n  \"height\": 165,\r\n  \"activity\": \"Sedang\"\r\n}"
+        },
+        "url": "{{baseurl}}/v1/auth/profile"
+      },
+      "response": []
+    },
+    {
+      "name": "Storage / Get Saved Menus",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"savedMenuIds array exists\", function () {",
+              "  pm.expect(json.data.savedMenuIds).to.be.an(\"array\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseurl}}/v1/storage/saved-menus?email={{demoRegisterEmail}}"
+      },
+      "response": []
+    },
+    {
+      "name": "Storage / Toggle Saved Menu",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"savedMenuIds array exists\", function () {",
+              "  pm.expect(json.data.savedMenuIds).to.be.an(\"array\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{demoRegisterEmail}}\",\r\n  \"menuId\": 1\r\n}"
+        },
+        "url": "{{baseurl}}/v1/storage/saved-menus"
+      },
+      "response": []
+    },
+    {
+      "name": "Storage / Save Optimizer Result",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"Returned optimizer result\", function () {",
+              "  pm.expect(json.data.result).to.be.an(\"object\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"{{demoRegisterEmail}}\",\r\n  \"result\": {\r\n    \"budget\": 10000,\r\n    \"target\": 2000,\r\n    \"protein\": 90\r\n  }\r\n}"
+        },
+        "url": "{{baseurl}}/v1/storage/optimizer-results"
+      },
+      "response": []
+    },
+    {
+      "name": "Storage / Get Optimizer Results",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.test(\"Response status is success\", function () {",
+              "  pm.expect(json.status).to.eql(\"success\");",
+              "});",
+              "pm.test(\"results array exists\", function () {",
+              "  pm.expect(json.data.results).to.be.an(\"array\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseurl}}/v1/storage/optimizer-results?email={{demoRegisterEmail}}"
       },
       "response": []
     },
@@ -84,18 +364,7 @@
           "mode": "raw",
           "raw": "{\r\n  \"budget_maksimal\": 10000,\r\n  \"target_kalori\": 500\r\n}"
         },
-        "url": {
-          "raw": "http://localhost:{{port}}/v1/optimizes",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "{{port}}",
-          "path": [
-            "v1",
-            "optimizes"
-          ]
-        }
+        "url": "{{baseurl}}/v1/optimizes"
       },
       "response": []
     },
@@ -133,18 +402,7 @@
           "mode": "raw",
           "raw": "{\r\n  \"target_kalori\": 500\r\n}"
         },
-        "url": {
-          "raw": "http://localhost:{{port}}/v1/optimizes",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "{{port}}",
-          "path": [
-            "v1",
-            "optimizes"
-          ]
-        }
+        "url": "{{baseurl}}/v1/optimizes"
       },
       "response": []
     }

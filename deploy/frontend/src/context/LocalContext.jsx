@@ -34,12 +34,12 @@ const initialProfile = {
 };
 
 const initialOptimizerResult = {
-  bmr: 1549,
-  tdee: 2401,
-  target: 2401,
-  protein: 104,
-  carbs: 270,
-  fat: 67,
+  bmr: 0,
+  tdee: 0,
+  target: 0,
+  protein: 0,
+  carbs: 0,
+  fat: 0,
   recommended: lunchMenus.slice(0, 3),
 };
 
@@ -138,25 +138,24 @@ function LocalProvider({ children }) {
         email: normalizedEmail,
         password,
         options: {
-          data: { name, bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.' },
+          data: { name, bio: '' },
         },
       });
       if (signUpError) {
         throw new Error(signUpError.message);
       }
       if (data?.user) {
-        // Simpan profile ke tabel profiles
         const { error: profileError } = await supabase.from('profiles').upsert([{
           user_id: data.user.id,
           email: normalizedEmail,
           name,
-          bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.',
-          goal: 'Jaga Kesehatan',
-          budget: 15000,
-          age: 18,
-          weight: 60,
-          height: 160,
-          activity: 'Sedang',
+          bio: '',
+          goal: '',
+          budget: 0,
+          age: 0,
+          weight: 0,
+          height: 0,
+          activity: '',
         }]);
         if (profileError) {
           console.warn('[register] Profile upsert warning:', profileError.message);
@@ -175,7 +174,7 @@ function LocalProvider({ children }) {
       name: name.trim(),
       email: normalizedEmail,
       password,
-      bio: 'Siap mengoptimalkan nutrisi harian dengan NutriAI.',
+      bio: '',
     };
 
     setUsers((currentUsers) => [...currentUsers, nextUser]);
@@ -183,8 +182,9 @@ function LocalProvider({ children }) {
 
   async function login({ email, password }) {
     const normalizedEmail = email.trim().toLowerCase();
+    const isDemoAccount = normalizedEmail === 'demo@nutriai.local';
 
-    if (useBackendStorage) {
+    if (!isDemoAccount && useBackendStorage) {
       const payload = await apiRequest('/v1/auth/login', {
         method: 'POST',
         body: { email: normalizedEmail, password },
@@ -197,7 +197,7 @@ function LocalProvider({ children }) {
       return;
     }
 
-    if (useSupabaseDirect) {
+    if (!isDemoAccount && useSupabaseDirect) {
       const { data: authData, error: signInError } = await supabase.auth.signInWithPassword({
         email: normalizedEmail,
         password,
@@ -209,15 +209,24 @@ function LocalProvider({ children }) {
       const authUser = authData?.user;
       const userId = authUser?.id;
       const userName = authUser?.user_metadata?.name || normalizedEmail.split('@')[0];
-      const userBio = authUser?.user_metadata?.bio || '';
 
       const profileData = await fetchSupabaseProfile(userId);
       const savedMenuIdsData = await fetchSupabaseSavedMenuIds(userId);
-      const nextAuthUser = { id: userId, name: userName, email: normalizedEmail, bio: userBio };
+      const nextAuthUser = { id: userId, name: userName, email: normalizedEmail, bio: profileData?.bio || '' };
 
       setAuthUser(nextAuthUser);
-      setProfile({ ...initialProfile, ...profileData, name: userName, bio: userBio });
-      setSavedMenuIds(savedMenuIdsData);
+      setProfile({
+        name: userName,
+        email: normalizedEmail,
+        bio: profileData?.bio || '',
+        goal: profileData?.goal || '',
+        budget: profileData?.budget || 0,
+        age: profileData?.age || 0,
+        weight: profileData?.weight || 0,
+        height: profileData?.height || 0,
+        activity: profileData?.activity || '',
+      });
+      setSavedMenuIds(savedMenuIdsData || []);
       return;
     }
 

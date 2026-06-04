@@ -17,10 +17,11 @@ function LoginPage() {
     setIsSubmitting(true);
 
     try {
-      await login({ email, password });
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      login({ email, password });
       navigate('/homepage');
     } catch (error) {
-      setErrorMessage(error.message || 'Login gagal. Periksa email dan password.');
+      setErrorMessage(error.message);
     } finally {
       setIsSubmitting(false);
     }

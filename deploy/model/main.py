@@ -13,14 +13,14 @@ app = FastAPI(
 
 # --- 1. DEFINISI CUSTOM OBJECTS (WAJIB ADA) ---
 # Ini agar FastAPI mengerti struktur lapisan dan loss buatanmu
-@tf.keras.utils.register_keras_serializable()
+@tf.keras.utils.register_keras_serializable(package='Custom', name='NutritionFeatureLayer')
 class NutritionFeatureLayer(tf.keras.layers.Layer):
     def __init__(self, units=64, **kwargs):
         super(NutritionFeatureLayer, self).__init__(**kwargs)
         self.units = units
     def build(self, input_shape):
-        self.w = self.add_weight(shape=(input_shape[-1], self.units), initializer='random_normal', trainable=True, name='w')
-        self.b = self.add_weight(shape=(self.units,), initializer='zeros', trainable=True, name='b')
+        self.w = self.add_weight(shape=(input_shape[-1], self.units), initializer='glorot_uniform', trainable=True, name='w_nutrition')
+        self.b = self.add_weight(shape=(self.units,), initializer='zeros', trainable=True, name='b_nutrition')
     def call(self, inputs):
         return tf.nn.relu(tf.matmul(inputs, self.w) + self.b)
     def get_config(self):
@@ -28,12 +28,14 @@ class NutritionFeatureLayer(tf.keras.layers.Layer):
         config.update({"units": self.units})
         return config
 
-@tf.keras.utils.register_keras_serializable()
+@tf.keras.utils.register_keras_serializable(package='Custom', name='CustomHuberLoss')
 class CustomHuberLoss(tf.keras.losses.Loss):
     def __init__(self, delta=1.0, **kwargs):
         super().__init__(**kwargs)
         self.delta = delta
     def call(self, y_true, y_pred):
+        y_true = tf.cast(y_true, dtype=tf.float32)
+        y_pred = tf.cast(y_pred, dtype=tf.float32)
         error = y_true - y_pred
         is_small_error = tf.abs(error) <= self.delta
         small_error_loss = tf.square(error) / 2
@@ -46,7 +48,7 @@ class CustomHuberLoss(tf.keras.losses.Loss):
 
 
 # --- 2. MEMUAT MODEL & DUA SCALER ---
-# Pastikan 3 file ini sudah kamu pindahkan ke folder yang sama dengan main.py
+# Mengambil dari lokasi di mana main.py dijalankan
 MODEL_PATH = os.getenv("MODEL_PATH", "nutrition_model.keras")
 X_SCALER_PATH = os.getenv("X_SCALER_PATH", "nutrition_X_scaler.pkl")
 Y_SCALER_PATH = os.getenv("Y_SCALER_PATH", "nutrition_y_scaler.pkl")
@@ -70,7 +72,6 @@ except Exception as e:
 
 
 # --- 3. KONFIGURASI GEMINI AI ---
-# Jika deploy di Hugging Face, atur SECRET environment variable GEMINI_API_KEY
 API_KEY_GEMINI = os.getenv("GEMINI_API_KEY", "")
 if not API_KEY_GEMINI:
     print("⚠️ GEMINI_API_KEY belum diatur. Saran AI Gemini akan dinonaktifkan.")
@@ -80,6 +81,10 @@ if not API_KEY_GEMINI:
 class OptimizationRequest(BaseModel):
     budget_maksimal: int
     target_kalori: int
+    berat_badan: float = 70.0
+    protein: float = 0.0
+    lemak: float = 0.0
+    karbo: float = 0.0
 
 @app.get("/")
 def read_root():
@@ -93,8 +98,16 @@ def optimize_menu(request: OptimizationRequest):
         raise HTTPException(status_code=500, detail="Mesin AI belum siap di server.")
     
     try:
-        # A. Siapkan data mentah
-        input_raw = np.array([[request.budget_maksimal, request.target_kalori]], dtype=np.float32)
+        if request.berat_badan <= 0:
+            raise HTTPException(status_code=400, detail="Berat badan harus diinput")
+        
+        weight = request.berat_badan if request.berat_badan > 0 else 70.0
+        target_cal = request.target_kalori
+        protein = request.protein if request.protein > 0 else (1.6 * weight)
+        lemak = request.lemak if request.lemak > 0 else (target_cal * 0.25 / 9)
+        karbo = request.karbo if request.karbo > 0 else (target_cal * 0.45 / 4)
+
+        input_raw = np.array([[request.budget_maksimal, request.target_kalori, protein, lemak, karbo]], dtype=np.float32)
         
         # B. Normalisasi Input dengan X_scaler
         input_scaled = x_scaler.transform(input_raw)
@@ -121,6 +134,7 @@ def optimize_menu(request: OptimizationRequest):
                 headers = {"Content-Type": "application/json"}
                 
                 response = requests.post(url, json=payload, headers=headers, timeout=30)
+                response.raise_for_status()
                 response_data = response.json()
                 saran_gemini = response_data['candidates'][0]['content']['parts'][0]['text']
         except Exception as e:

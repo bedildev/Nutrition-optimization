@@ -58,7 +58,7 @@ function ProfilePage() {
 
           <label className="field" htmlFor="profile-goal">
             <span>Fokus nutrisi</span>
-            <input id="profile-goal" type="text" value={goal} onChange={onGoalChange} />
+            <input id="profile-goal" type="text" value={goal} readOnly />
           </label>
 
           <label className="field" htmlFor="profile-bio">

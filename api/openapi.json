@@ -1,0 +1,148 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Diet Optimization API",
+    "version": "1.0.0",
+    "description": "REST API for AI nutrition optimization (proxy to FastAPI)."
+  },
+  "servers": [
+    {
+      "url": "{baseUrl}",
+      "variables": {
+        "baseUrl": {
+          "default": "http://localhost:3000"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/api/health": {
+      "get": {
+        "summary": "Health check",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/optimizes": {
+      "post": {
+        "summary": "Optimize nutrition",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptimizeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OptimizeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StandardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OptimizeRequest": {
+        "type": "object",
+        "required": ["budget_maksimal", "target_kalori"],
+        "properties": {
+          "budget_maksimal": {
+            "type": "integer",
+            "example": 15000
+          },
+          "target_kalori": {
+            "type": "integer",
+            "example": 600
+          }
+        }
+      },
+      "StandardResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "success"
+          },
+          "message": {
+            "type": "string",
+            "example": "OK"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      },
+      "OptimizeResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "example": "success"
+          },
+          "message": {
+            "type": "string",
+            "example": "Request berhasil diproses."
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "parameter_pencarian": {
+                "type": "object",
+                "properties": {
+                  "budget": {
+                    "type": "integer",
+                    "example": 15000
+                  },
+                  "kalori": {
+                    "type": "integer",
+                    "example": 600
+                  }
+                }
+              },
+              "rekomendasi_menu": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "ringkasan": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

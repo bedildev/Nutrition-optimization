@@ -65,7 +65,7 @@ function OptimizerPage() {
   }
 
   async function fetchAiSummary(nextResult) {
-    const response = await fetch('/v1/optimizes', {
+    const response = await fetch('https://feryardnsyah-nutri-optimize.hf.space/optimizes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -73,6 +73,10 @@ function OptimizerPage() {
       body: JSON.stringify({
         budget_maksimal: nextResult.budget,
         target_kalori: nextResult.target,
+        berat_badan: Number(weight),
+        protein: 0,
+        lemak: 0,
+        karbo: 0,
       }),
     });
 
@@ -194,9 +198,13 @@ function OptimizerPage() {
 
         {step === 2 ? (
           <div className="loading-panel">
-            <div className="loading-panel__gear">AI</div>
-            <h2>AI sedang menganalisis kebutuhan Anda</h2>
-            <p>Menghitung target kalori dan mencocokkan menu makan siang paling relevan.</p>
+            <div className="loading-spinner">
+              <div className="spinner-circle" />
+              <div className="spinner-circle" />
+              <div className="spinner-circle" />
+            </div>
+            <h2>Menganalisis kebutuhan nutrisi Anda...</h2>
+            <p>Menghitung target kalori dan mencocokkan menu makan paling relevan.</p>
             <div className="loading-panel__dots">
               <span />
               <span />

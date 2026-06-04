@@ -1,20 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import heroImage from '../assets/home-hero.png';
+import food1 from '../assets/food 1.jpg';
+import food2 from '../assets/food 2.jpg';
+import food3 from '../assets/food 3.jpg';
 import { useLocal } from '../context/LocalContext';
+import CardImage from '../components/CardImage';
 
 const featureItems = [
   {
     title: 'Optimizer berbasis AI',
     copy: 'Hitung target kalori, protein, karbohidrat, dan lemak dalam satu alur yang ringan.',
+    to: '/ai-optimizer',
+    image: food1,
   },
   {
     title: 'Katalog makan siang',
     copy: 'Koleksi menu makan siang bernutrisi dengan skor kualitas, macro, dan label manfaat.',
+    to: '/catalog',
+    image: food2,
   },
   {
     title: 'Tampilan yang interaktif',
     copy: 'Seluruh pengalaman dirancang agar tetap cepat, responsif, dan nyaman digunakan di berbagai alur penggunaan.',
+    to: '/about',
+    image: food3,
   },
 ];
 
@@ -30,24 +40,22 @@ function HomePage() {
           <span className="eyebrow">{authUser ? `${greeting}, ${authUser.name}` : 'Smart Nutrition Experience'}</span>
           <h1>
             Optimasi Menu Makanan Anak
-            <span> dengan NutriAI</span>
+            <span> dengan </span>
+            <span> NutriMeal AI</span>
           </h1>
           <p>
-            NutriAI membantu pengguna menemukan menu makan siang yang lebih terarah,
-            mengoptimalkan target gizi, dan mengelola profil personal lewat frontend yang responsif.
+            NutriMeal AI membantu pengguna menemukan menu makan siang yang lebih terarah dan
+            mengoptimalkan target gizi.
           </p>
           <div className="hero-section__actions">
-            <Link className="button button--primary" to={authUser ? '/ai-optimizer' : '/register'}>
-              {authUser ? 'Buka AI Optimizer' : 'Buat Akun'}
-            </Link>
-            <Link className="button button--secondary" to={authUser ? '/menu' : '/login'}>
-              {authUser ? 'Jelajahi Menu' : 'Masuk ke Demo'}
+            <Link className="button button--primary" to={authUser ? '/ai-optimizer' : '/login'}>
+              {authUser ? 'Buka AI Optimizer' : 'Masuk ke Demo'}
             </Link>
           </div>
         </div>
 
         <div className="hero-illustration">
-          <img src={heroImage} alt="Ilustrasi NutriAI" />
+          <img src={heroImage} alt="Ilustrasi NutriMeal AI" />
         </div>
       </section>
 
@@ -56,13 +64,16 @@ function HomePage() {
           <span className="eyebrow">Core experience</span>
           <h2>Dirancang dengan sederhana dan nyaman digunakan</h2>
         </div>
-        <div className="feature-grid">
-          {featureItems.map((feature) => (
-            <article className="feature-panel" key={feature.title}>
-              <span className="feature-panel__icon" />
-              <h3>{feature.title}</h3>
-              <p>{feature.copy}</p>
-            </article>
+        <div className="feature-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featureItems.map((feature, idx) => (
+            <CardImage
+              key={feature.title}
+              title={feature.title}
+              description={feature.copy}
+              image={feature.image}
+              buttonText={null}
+              to={feature.to}
+            />
           ))}
         </div>
       </section>

@@ -1,0 +1,411 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Diet Optimization Backend API",
+    "version": "1.0.0",
+    "description": "Backend API for auth, storage, and optimization proxy."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Local development"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Health check",
+        "responses": {
+          "200": {
+            "description": "Backend status",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HealthResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/optimizes": {
+      "post": {
+        "summary": "Optimize menu (proxy to model)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/OptimizeRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Optimization result",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OptimizeResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/auth/register": {
+      "post": {
+        "summary": "Register user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RegisterRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User created",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/AuthResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/auth/login": {
+      "post": {
+        "summary": "Login user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login success",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LoginResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/auth/profile": {
+      "get": {
+        "summary": "Get profile",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "format": "email" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Profile data",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ProfileResponse" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update profile",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ProfileUpdateRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Profile updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ProfileResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/storage/saved-menus": {
+      "get": {
+        "summary": "Get saved menus",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "format": "email" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Saved menu IDs",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SavedMenusResponse" }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Toggle saved menu",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/SavedMenuToggleRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Saved menu updated",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/SavedMenusResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/storage/optimizer-results": {
+      "get": {
+        "summary": "Get optimizer results",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "format": "email" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Optimizer results",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OptimizerResultsResponse" }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Save optimizer result",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/OptimizerResultCreateRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Result saved",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/OptimizerResultCreateResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "message": { "type": "string" },
+          "data": { "type": "object" }
+        }
+      },
+      "OptimizeRequest": {
+        "type": "object",
+        "required": ["budget_maksimal", "target_kalori"],
+        "properties": {
+          "budget_maksimal": { "type": "integer", "example": 10000 },
+          "target_kalori": { "type": "integer", "example": 500 }
+        }
+      },
+      "OptimizeResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "message": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "parameter_pencarian": { "type": "object" },
+              "rekomendasi_menu": { "type": "array", "items": { "type": "object" } },
+              "ringkasan": { "type": "object" }
+            }
+          }
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "required": ["name", "email", "password"],
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "password": { "type": "string" }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "password": { "type": "string" }
+        }
+      },
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "message": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "user": { "$ref": "#/components/schemas/User" }
+            }
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "message": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "user": { "$ref": "#/components/schemas/User" },
+              "profile": { "$ref": "#/components/schemas/Profile" },
+              "savedMenuIds": { "type": "array", "items": { "type": "integer" } }
+            }
+          }
+        }
+      },
+      "Profile": {
+        "type": "object",
+        "properties": {
+          "user_id": { "type": "string", "format": "uuid" },
+          "email": { "type": "string", "format": "email" },
+          "goal": { "type": "string" },
+          "budget": { "type": "integer" },
+          "age": { "type": "integer" },
+          "weight": { "type": "integer" },
+          "height": { "type": "integer" },
+          "activity": { "type": "string" },
+          "name": { "type": "string" },
+          "bio": { "type": "string" }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "format": "uuid" },
+          "name": { "type": "string" },
+          "email": { "type": "string", "format": "email" },
+          "bio": { "type": "string" }
+        }
+      },
+      "ProfileResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "profile": { "$ref": "#/components/schemas/Profile" }
+            }
+          }
+        }
+      },
+      "ProfileUpdateRequest": {
+        "type": "object",
+        "required": ["email", "name", "budget", "age", "weight", "height", "activity"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "name": { "type": "string" },
+          "bio": { "type": "string" },
+          "goal": { "type": "string" },
+          "budget": { "type": "integer" },
+          "age": { "type": "integer" },
+          "weight": { "type": "integer" },
+          "height": { "type": "integer" },
+          "activity": { "type": "string" }
+        }
+      },
+      "SavedMenuToggleRequest": {
+        "type": "object",
+        "required": ["email", "menuId"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "menuId": { "type": "integer" }
+        }
+      },
+      "SavedMenusResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "savedMenuIds": { "type": "array", "items": { "type": "integer" } }
+            }
+          }
+        }
+      },
+      "OptimizerResultCreateRequest": {
+        "type": "object",
+        "required": ["email", "result"],
+        "properties": {
+          "email": { "type": "string", "format": "email" },
+          "result": { "type": "object" }
+        }
+      },
+      "OptimizerResultCreateResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "message": { "type": "string" },
+          "data": { "type": "object" }
+        }
+      },
+      "OptimizerResultsResponse": {
+        "type": "object",
+        "properties": {
+          "status": { "type": "string" },
+          "data": {
+            "type": "object",
+            "properties": {
+              "results": { "type": "array", "items": { "type": "object" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

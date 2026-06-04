@@ -11,8 +11,11 @@ console.log("[OPTIMIZE] FASTAPI_BASE_URL:", FASTAPI_BASE_URL);
 
 router.post("/optimizes", validate(optimizeSchema), async (req, res, next) => {
   try {
-    console.log("[OPTIMIZE] Calling FastAPI:", `${FASTAPI_BASE_URL}/optimizes`);
-    const response = await axios.post(`${FASTAPI_BASE_URL}/optimizes`, req.body, {
+    const fastapiUrl = FASTAPI_BASE_URL.endsWith('/') 
+      ? `${FASTAPI_BASE_URL}optimizes` 
+      : `${FASTAPI_BASE_URL}/optimizes`;
+    console.log("[OPTIMIZE] Calling FastAPI:", fastapiUrl);
+    const response = await axios.post(fastapiUrl, req.body, {
       timeout: 60000
     });
     console.log("[OPTIMIZE] FastAPI response:", response.data);

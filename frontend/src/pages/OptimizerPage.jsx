@@ -15,20 +15,25 @@ const activityFactors = {
 
 function OptimizerPage() {
   const { lunchMenus, profile, optimizerResult, saveOptimizerResult, updateProfile } = useLocal();
+  const _raw = import.meta.env.VITE_API_BASE_URL || '';
+  const apiBaseUrl = _raw.startsWith('http://localhost') || _raw.startsWith('https://localhost') ? '' : _raw.replace(/\/$/, '');
   const [age, onAgeChange] = useInput(String(profile.age));
   const [weight, onWeightChange] = useInput(String(profile.weight));
   const [height, onHeightChange] = useInput(String(profile.height));
+  const [budget, onBudgetChange] = useInput(String(profile.budget ?? 15000));
   const [goal, setGoal] = useState(profile.goal);
   const [activity, setActivity] = useState(profile.activity);
   const [step, setStep] = useState(optimizerResult ? 3 : 1);
   const [result, setResult] = useState(optimizerResult);
+  const [apiError, setApiError] = useState('');
 
   function calculateRecommendation() {
     const ageValue = Number(age);
     const weightValue = Number(weight);
     const heightValue = Number(height);
+    const budgetValue = Number(budget);
 
-    if (!ageValue || !weightValue || !heightValue) {
+    if (!ageValue || !weightValue || !heightValue || !budgetValue) {
       return null;
     }
 
@@ -48,6 +53,7 @@ function OptimizerPage() {
         : sortedMenus.slice(0, 3);
 
     return {
+      budget: budgetValue,
       bmr,
       tdee,
       target,
@@ -58,8 +64,34 @@ function OptimizerPage() {
     };
   }
 
+  async function fetchAiSummary(nextResult) {
+    const response = await fetch('https://feryardnsyah-nutri-optimize.hf.space/optimizes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        budget_maksimal: nextResult.budget,
+        target_kalori: nextResult.target,
+        berat_badan: Number(weight),
+        protein: 0,
+        lemak: 0,
+        karbo: 0,
+      }),
+    });
+
+    if (!response.ok) {
+      const payload = await response.json().catch(() => null);
+      throw new Error(payload?.message || 'Gagal memanggil API AI.');
+    }
+
+    const payload = await response.json();
+    return payload?.data?.ringkasan || {};
+  }
+
   async function handleGenerate() {
     setStep(2);
+    setApiError('');
     await new Promise((resolve) => setTimeout(resolve, 1300));
 
     const nextResult = calculateRecommendation();
@@ -69,18 +101,31 @@ function OptimizerPage() {
       return;
     }
 
-    setResult(nextResult);
+    let aiSummary = {};
+
+    try {
+      aiSummary = await fetchAiSummary(nextResult);
+    } catch (error) {
+      setApiError(error.message);
+    }
+
+    const mergedResult = {
+      ...nextResult,
+      aiSummary,
+    };
+
+    setResult(mergedResult);
     setStep(3);
-    saveOptimizerResult(nextResult);
+    saveOptimizerResult(mergedResult);
     updateProfile({
       goal,
       activity,
+      budget: Number(budget),
       age: Number(age),
       weight: Number(weight),
       height: Number(height),
     });
   }
-
   return (
     <div className="page page--optimizer">
       <section className="content-section">
@@ -94,6 +139,7 @@ function OptimizerPage() {
           <div className="optimizer-panel">
             <div className="optimizer-grid">
               {[
+                { id: 'budget', label: 'Budget (Rp)', value: budget, onChange: onBudgetChange },
                 { id: 'age', label: 'Usia (tahun)', value: age, onChange: onAgeChange },
                 { id: 'weight', label: 'Berat badan (kg)', value: weight, onChange: onWeightChange },
                 { id: 'height', label: 'Tinggi badan (cm)', value: height, onChange: onHeightChange },
@@ -152,9 +198,13 @@ function OptimizerPage() {
 
         {step === 2 ? (
           <div className="loading-panel">
-            <div className="loading-panel__gear">AI</div>
-            <h2>AI sedang menganalisis kebutuhan Anda</h2>
-            <p>Menghitung target kalori dan mencocokkan menu makan siang paling relevan.</p>
+            <div className="loading-spinner">
+              <div className="spinner-circle" />
+              <div className="spinner-circle" />
+              <div className="spinner-circle" />
+            </div>
+            <h2>Menganalisis kebutuhan nutrisi Anda...</h2>
+            <p>Menghitung target kalori dan mencocokkan menu makan paling relevan.</p>
             <div className="loading-panel__dots">
               <span />
               <span />
@@ -194,7 +244,18 @@ function OptimizerPage() {
               <div className="result-meta">
                 <span>BMR {result.bmr} kkal</span>
                 <span>TDEE {result.tdee} kkal</span>
+                <span>Budget Rp{result.budget}</span>
                 <span>{goal}</span>
+              </div>
+
+              <div className="result-meta">
+                {apiError ? (
+                  <span>AI: {apiError}</span>
+                ) : (
+                  <span>
+                    AI: {result.aiSummary?.catatan_ai || 'Belum ada saran AI.'}
+                  </span>
+                )}
               </div>
             </section>
 

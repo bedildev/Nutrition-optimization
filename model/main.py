@@ -81,6 +81,10 @@ if not API_KEY_GEMINI:
 class OptimizationRequest(BaseModel):
     budget_maksimal: int
     target_kalori: int
+    berat_badan: float = 70.0
+    protein: float = 0.0
+    lemak: float = 0.0
+    karbo: float = 0.0
 
 @app.get("/")
 def read_root():
@@ -94,10 +98,16 @@ def optimize_menu(request: OptimizationRequest):
         raise HTTPException(status_code=500, detail="Mesin AI belum siap di server.")
     
     try:
-        # A. Siapkan data mentah (format disesuaikan dengan input model baru: harga_final, kalori, protein, lemak, karbo)
-        # Karena endpoint API lama hanya menerima budget dan kalori, kita asumsikan protein, lemak, karbo memiliki nilai default 0 
-        # Atau bisa disesuaikan, untuk amannya gunakan format 5 dimensi
-        input_raw = np.array([[request.budget_maksimal, request.target_kalori, 0, 0, 0]], dtype=np.float32)
+        if request.berat_badan <= 0:
+            raise HTTPException(status_code=400, detail="Berat badan harus diinput")
+        
+        weight = request.berat_badan if request.berat_badan > 0 else 70.0
+        target_cal = request.target_kalori
+        protein = request.protein if request.protein > 0 else (1.6 * weight)
+        lemak = request.lemak if request.lemak > 0 else (target_cal * 0.25 / 9)
+        karbo = request.karbo if request.karbo > 0 else (target_cal * 0.45 / 4)
+
+        input_raw = np.array([[request.budget_maksimal, request.target_kalori, protein, lemak, karbo]], dtype=np.float32)
         
         # B. Normalisasi Input dengan X_scaler
         input_scaled = x_scaler.transform(input_raw)
