@@ -95,6 +95,11 @@ function LocalProvider({ children }) {
   const [profile, setProfile] = useState(() => ({ ...initialProfile, ...readStorage('nutriai-profile', {}) }));
   const [savedMenuIds, setSavedMenuIds] = useState(() => readStorage('nutriai-saved-menus', [lunchMenus[0].id]));
   const [optimizerResult, setOptimizerResult] = useState(() => readStorage('nutriai-optimizer-result', initialOptimizerResult));
+  const [activeLunchMenus, setActiveLunchMenus] = useState(() => readStorage('nutriai-menus', lunchMenus));
+
+  useEffect(() => {
+    localStorage.setItem('nutriai-menus', JSON.stringify(activeLunchMenus));
+  }, [activeLunchMenus]);
 
   useEffect(() => {
     localStorage.setItem('nutriai-users', JSON.stringify(users));
@@ -340,11 +345,19 @@ function LocalProvider({ children }) {
     });
   }
 
+  function addGeneratedMenus(newMenus) {
+    setActiveLunchMenus((current) => {
+      const existingIds = new Set(current.map((m) => m.id));
+      const menusToAdd = newMenus.filter((m) => !existingIds.has(m.id));
+      return [...menusToAdd, ...current];
+    });
+  }
+
   const contextValue = useMemo(() => ({
     authUser,
     login,
     logout,
-    lunchMenus,
+    lunchMenus: activeLunchMenus,
     optimizerResult,
     profile,
     register,
@@ -352,7 +365,8 @@ function LocalProvider({ children }) {
     saveOptimizerResult,
     toggleSavedMenu,
     updateProfile,
-  }), [authUser, optimizerResult, profile, savedMenuIds]);
+    addGeneratedMenus,
+  }), [authUser, optimizerResult, profile, savedMenuIds, activeLunchMenus]);
 
   return (
     <LocalContext.Provider value={contextValue}>

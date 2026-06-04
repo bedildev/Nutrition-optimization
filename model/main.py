@@ -4,11 +4,21 @@ import numpy as np
 import joblib
 import requests
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import json
 
 app = FastAPI(
     title="Nutrition Optimization API",
     description="API Engine AI riil untuk tim PSU091 dengan Custom Layers & Gemini"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # --- 1. DEFINISI CUSTOM OBJECTS (WAJIB ADA) ---
@@ -122,10 +132,34 @@ def optimize_menu(request: OptimizationRequest):
         # E. Minta Saran dari Gemini (REST API langsung)
         try:
             GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+            saran_gemini = ""
+            menu_baru = []
+            
             if not GEMINI_API_KEY:
                 saran_gemini = "GEMINI_API_KEY belum dikonfigurasi."
             else:
-                prompt = f"Seorang pengguna dengan budget Rp{request.budget_maksimal} dan target {request.target_kalori} kalori mendapat skor efisiensi nutrisi {skor_prediksi:.2f}. Berikan 2 kalimat saran singkat jenis makanan lokal Indonesia yang sebaiknya dibeli."
+                prompt = f"""
+Seorang pengguna dengan budget Rp{request.budget_maksimal} dan target {request.target_kalori} kalori mendapat skor efisiensi nutrisi {skor_prediksi:.2f}. 
+Berikan 1 kalimat catatan singkat, lalu buatkan 3 rekomendasi menu lokal Indonesia yang sesuai. 
+Wajib merespons HANYA dengan format JSON valid tanpa markdown block (jangan gunakan ```json), dengan struktur persis seperti ini:
+{{
+  "catatan_ai": "Saran singkat...",
+  "menu_baru": [
+    {{
+      "name": "Nama Menu",
+      "cal": 400,
+      "protein": 20,
+      "carbs": 50,
+      "fat": 10,
+      "description": "Deskripsi singkat.",
+      "tags": ["Lokal", "Tinggi Protein"],
+      "time": "Makan Siang",
+      "img": "AI",
+      "score": 95
+    }}
+  ]
+}}
+"""
                 
                 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
                 payload = {
@@ -136,7 +170,17 @@ def optimize_menu(request: OptimizationRequest):
                 response = requests.post(url, json=payload, headers=headers, timeout=30)
                 response.raise_for_status()
                 response_data = response.json()
-                saran_gemini = response_data['candidates'][0]['content']['parts'][0]['text']
+                gemini_text = response_data['candidates'][0]['content']['parts'][0]['text']
+                
+                try:
+                    gemini_text_clean = gemini_text.strip().removeprefix("```json").removesuffix("```").strip()
+                    gemini_json = json.loads(gemini_text_clean)
+                    saran_gemini = gemini_json.get("catatan_ai", "Berikut rekomendasi AI untuk Anda.")
+                    menu_baru = gemini_json.get("menu_baru", [])
+                except json.JSONDecodeError:
+                    saran_gemini = gemini_text
+                    menu_baru = []
+                    
         except Exception as e:
             saran_gemini = f"Gagal memuat saran AI: {e}"
         
@@ -150,7 +194,8 @@ def optimize_menu(request: OptimizationRequest):
             },
             "ringkasan": {
                 "skor_nutrisi_prediksi": skor_prediksi,
-                "catatan_ai": saran_gemini
+                "catatan_ai": saran_gemini,
+                "menu_baru": menu_baru
             }
         }
     except Exception as e:

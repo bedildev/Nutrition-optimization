@@ -14,7 +14,7 @@ const activityFactors = {
 };
 
 function OptimizerPage() {
-  const { lunchMenus, profile, optimizerResult, saveOptimizerResult, updateProfile } = useLocal();
+  const { lunchMenus, profile, optimizerResult, saveOptimizerResult, updateProfile, addGeneratedMenus } = useLocal();
   const _raw = import.meta.env.VITE_API_BASE_URL || '';
   const apiBaseUrl = _raw.startsWith('http://localhost') || _raw.startsWith('https://localhost') ? '' : _raw.replace(/\/$/, '');
   const [age, onAgeChange] = useInput(String(profile.age));
@@ -86,7 +86,7 @@ function OptimizerPage() {
     }
 
     const payload = await response.json();
-    return payload?.data?.ringkasan || {};
+    return payload?.ringkasan || {};
   }
 
   async function handleGenerate() {
@@ -105,6 +105,29 @@ function OptimizerPage() {
 
     try {
       aiSummary = await fetchAiSummary(nextResult);
+
+      if (aiSummary.menu_baru && Array.isArray(aiSummary.menu_baru)) {
+        const generatedMenus = aiSummary.menu_baru.map((m, i) => ({
+          id: `ai-${Date.now()}-${i}`,
+          name: m.name || 'Menu AI',
+          cal: m.cal || 0,
+          protein: m.protein || 0,
+          carbs: m.carbs || 0,
+          fat: m.fat || 0,
+          tags: m.tags || ['AI Generated'],
+          time: m.time || 'Makan Siang',
+          img: m.img || 'AI',
+          score: m.score || 95,
+          description: m.description || 'Rekomendasi khusus dari AI Optimizer',
+        }));
+
+        nextResult.recommended = [...generatedMenus, ...nextResult.recommended].slice(0, 3);
+        
+        if (addGeneratedMenus) {
+          addGeneratedMenus(generatedMenus);
+        }
+      }
+
     } catch (error) {
       setApiError(error.message);
     }
