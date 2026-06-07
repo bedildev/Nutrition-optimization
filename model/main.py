@@ -118,7 +118,7 @@ def optimize_menu(request: OptimizationRequest):
         lemak = request.lemak if request.lemak > 0 else (target_cal * 0.25 / 9)
         karbo = request.karbo if request.karbo > 0 else (target_cal * 0.45 / 4)
 
-        input_raw = np.array([[request.budget_maksimal, request.target_kalori, protein, lemak, karbo]], dtype=np.float32)
+        input_raw = np.array([[request.budget_maksimal, request.target_kalori]], dtype=np.float32)
         
         # B. Normalisasi Input dengan X_scaler
         input_scaled = x_scaler.transform(input_raw)
