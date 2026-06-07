@@ -197,7 +197,7 @@ Wajib merespons HANYA dengan format JSON valid tanpa markdown block (jangan guna
                         
                         break  # Success, keluar dari retry loop
                         
-                    except requests.exceptions.RequestException as e:
+                    except (requests.exceptions.RequestException, KeyError, IndexError, json.JSONDecodeError) as e:
                         last_error = e
                         if attempt < max_retries - 1:
                             wait_time = 2 ** attempt
@@ -209,6 +209,7 @@ Wajib merespons HANYA dengan format JSON valid tanpa markdown block (jangan guna
                     
         except Exception as e:
             saran_gemini = f"Gagal memuat saran AI: {e}"
+            menu_baru = []
         
         # F. Response JSON Lengkap untuk Backend
         return {

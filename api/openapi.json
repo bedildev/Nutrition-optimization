@@ -75,7 +75,7 @@
     "schemas": {
       "OptimizeRequest": {
         "type": "object",
-        "required": ["budget_maksimal", "target_kalori"],
+        "required": ["budget_maksimal", "target_kalori", "berat_badan"],
         "properties": {
           "budget_maksimal": {
             "type": "integer",
@@ -83,7 +83,30 @@
           },
           "target_kalori": {
             "type": "integer",
-            "example": 600
+            "example": 2200
+          },
+          "berat_badan": {
+            "type": "number",
+            "format": "float",
+            "example": 65.0
+          },
+          "protein": {
+            "type": "number",
+            "format": "float",
+            "default": 0,
+            "example": 0
+          },
+          "lemak": {
+            "type": "number",
+            "format": "float",
+            "default": 0,
+            "example": 0
+          },
+          "karbo": {
+            "type": "number",
+            "format": "float",
+            "default": 0,
+            "example": 0
           }
         }
       },
@@ -137,7 +160,69 @@
                 }
               },
               "ringkasan": {
-                "type": "object"
+                "type": "object",
+                "properties": {
+                  "skor_nutrisi_prediksi": {
+                    "type": "number",
+                    "format": "float",
+                    "example": 0.85
+                  },
+                  "catatan_ai": {
+                    "type": "string",
+                    "example": "Budget Anda cukup untuk menu seimbang dengan protein tinggi."
+                  },
+                  "menu_baru": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "example": "Nasi Ayam Tempe"
+                        },
+                        "cal": {
+                          "type": "integer",
+                          "example": 450
+                        },
+                        "protein": {
+                          "type": "integer",
+                          "example": 25
+                        },
+                        "carbs": {
+                          "type": "integer",
+                          "example": 50
+                        },
+                        "fat": {
+                          "type": "integer",
+                          "example": 12
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "Menu seimbang dengan protein tinggi"
+                        },
+                        "tags": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          },
+                          "example": ["Lokal", "Tinggi Protein"]
+                        },
+                        "time": {
+                          "type": "string",
+                          "example": "Makan Siang"
+                        },
+                        "img": {
+                          "type": "string",
+                          "example": "AI"
+                        },
+                        "score": {
+                          "type": "integer",
+                          "example": 95
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           }

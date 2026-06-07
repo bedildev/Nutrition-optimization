@@ -241,10 +241,14 @@
       },
       "OptimizeRequest": {
         "type": "object",
-        "required": ["budget_maksimal", "target_kalori"],
+        "required": ["budget_maksimal", "target_kalori", "berat_badan"],
         "properties": {
-          "budget_maksimal": { "type": "integer", "example": 10000 },
-          "target_kalori": { "type": "integer", "example": 500 }
+          "budget_maksimal": { "type": "integer", "example": 15000 },
+          "target_kalori": { "type": "integer", "example": 2200 },
+          "berat_badan": { "type": "number", "format": "float", "example": 65.0 },
+          "protein": { "type": "number", "format": "float", "default": 0, "example": 0 },
+          "lemak": { "type": "number", "format": "float", "default": 0, "example": 0 },
+          "karbo": { "type": "number", "format": "float", "default": 0, "example": 0 }
         }
       },
       "OptimizeResponse": {
@@ -257,7 +261,31 @@
             "properties": {
               "parameter_pencarian": { "type": "object" },
               "rekomendasi_menu": { "type": "array", "items": { "type": "object" } },
-              "ringkasan": { "type": "object" }
+              "ringkasan": {
+                "type": "object",
+                "properties": {
+                  "skor_nutrisi_prediksi": { "type": "number", "format": "float", "example": 0.85 },
+                  "catatan_ai": { "type": "string", "example": "Budget cukup untuk menu seimbang" },
+                  "menu_baru": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": { "type": "string" },
+                        "cal": { "type": "integer" },
+                        "protein": { "type": "integer" },
+                        "carbs": { "type": "integer" },
+                        "fat": { "type": "integer" },
+                        "description": { "type": "string" },
+                        "tags": { "type": "array", "items": { "type": "string" } },
+                        "time": { "type": "string" },
+                        "img": { "type": "string" },
+                        "score": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
