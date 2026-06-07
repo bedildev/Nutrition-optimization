@@ -275,7 +275,7 @@ function OptimizerPage() {
 
               <div className="result-meta">
                 {apiError ? (
-                  <span>AI: {apiError}</span>
+                  <span>Saran dari AI: {apiError}</span>
                 ) : (
                   <span>
                     AI: {result.aiSummary?.catatan_ai || 'Belum ada saran AI.'}
