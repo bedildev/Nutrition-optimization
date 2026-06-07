@@ -3,6 +3,7 @@ import tensorflow as tf
 import numpy as np
 import joblib
 import requests
+import time
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -167,19 +168,44 @@ Wajib merespons HANYA dengan format JSON valid tanpa markdown block (jangan guna
                 }
                 headers = {"Content-Type": "application/json"}
                 
-                response = requests.post(url, json=payload, headers=headers, timeout=30)
-                response.raise_for_status()
-                response_data = response.json()
-                gemini_text = response_data['candidates'][0]['content']['parts'][0]['text']
+                # Retry logic untuk handle 503 errors
+                max_retries = 3
+                last_error = None
                 
-                try:
-                    gemini_text_clean = gemini_text.strip().removeprefix("```json").removesuffix("```").strip()
-                    gemini_json = json.loads(gemini_text_clean)
-                    saran_gemini = gemini_json.get("catatan_ai", "Berikut rekomendasi AI untuk Anda.")
-                    menu_baru = gemini_json.get("menu_baru", [])
-                except json.JSONDecodeError:
-                    saran_gemini = gemini_text
-                    menu_baru = []
+                for attempt in range(max_retries):
+                    try:
+                        response = requests.post(url, json=payload, headers=headers, timeout=30)
+                        
+                        # Jika 503 (Service Unavailable), retry dengan exponential backoff
+                        if response.status_code == 503 and attempt < max_retries - 1:
+                            wait_time = 2 ** attempt  # 1s, 2s, 4s
+                            time.sleep(wait_time)
+                            continue
+                        
+                        response.raise_for_status()
+                        response_data = response.json()
+                        gemini_text = response_data['candidates'][0]['content']['parts'][0]['text']
+                        
+                        try:
+                            gemini_text_clean = gemini_text.strip().removeprefix("```json").removesuffix("```").strip()
+                            gemini_json = json.loads(gemini_text_clean)
+                            saran_gemini = gemini_json.get("catatan_ai", "Berikut rekomendasi AI untuk Anda.")
+                            menu_baru = gemini_json.get("menu_baru", [])
+                        except json.JSONDecodeError:
+                            saran_gemini = gemini_text
+                            menu_baru = []
+                        
+                        break  # Success, keluar dari retry loop
+                        
+                    except requests.exceptions.RequestException as e:
+                        last_error = e
+                        if attempt < max_retries - 1:
+                            wait_time = 2 ** attempt
+                            time.sleep(wait_time)
+                        else:
+                            # Semua retry gagal, gunakan fallback
+                            saran_gemini = "AI sedang sibuk, silakan coba lagi nanti."
+                            menu_baru = []
                     
         except Exception as e:
             saran_gemini = f"Gagal memuat saran AI: {e}"
